@@ -14,70 +14,30 @@
         .title-section { min-height: 100vh; display: flex; align-items: center; justify-content: center; padding: 4rem; background-color: #fdfbf7; }
         nav { transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1); }
         #menu-overlay { transition: opacity 0.3s ease, visibility 0.3s; }
-        .video-container { position: relative; width: 100%; aspect-ratio: 16 / 9; cursor: pointer; }
+        
+        /* Contenedor del video con indicación de clic */
+        .video-container { position: relative; width: 100%; aspect-ratio: 16 / 9; cursor: pointer; overflow: hidden; }
+        .video-container:hover img { transform: scale(1.05); opacity: 0.8; }
+        .video-container img { transition: all 0.3s ease; }
+        
+        /* Icono de Play */
+        .video-container::after {
+            content: '▶';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 5rem;
+            color: white;
+            opacity: 0.8;
+            text-shadow: 0 4px 10px rgba(0,0,0,0.5);
+            pointer-events: none;
+        }
     </style>
 </head>
 <body class="leading-relaxed">
 
-    <nav id="main-nav" class="fixed top-0 w-full z-50 py-4 px-6 bg-white text-[#201E59] shadow-md">
-        <div class="max-w-5xl mx-auto flex justify-between items-center">
-            <h1 class="text-xl font-bold italic tracking-tight hidden md:block">Dilemas de la ciudadanía</h1>
-            <div class="flex items-center gap-6">
-                <a href="#inicio" class="text-sm font-semibold uppercase tracking-wider hover:text-blue-700">Inicio</a>
-                <button id="nav-toggle" class="text-sm font-semibold uppercase tracking-wider hover:text-blue-700 focus:outline-none">Navegación</button>
-                <a href="#creditos" class="text-sm font-semibold uppercase tracking-wider hover:text-blue-700">Créditos</a>
-            </div>
-        </div>
-    </nav>
-
-    <div id="menu-overlay" class="fixed inset-0 bg-[#fdfbf7] z-[100] opacity-0 invisible flex items-center justify-center p-8">
-        <button id="close-menu" class="absolute top-8 right-8 text-4xl text-[#2C2973]">&times;</button>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-12 text-center max-w-5xl w-full">
-            <div><h4 class="text-xl font-bold text-[#2C2973] mb-6 border-b border-[#2C2973] pb-2">Viñetas</h4><ul class="space-y-4 text-slate-700"><li><a href="#deseo-hero" class="menu-link hover:text-blue-700">Deseo cumplido</a></li><li><a href="#conjuntos-hero" class="menu-link hover:text-blue-700">Conjuntos</a></li><li><a href="#odio-hero" class="menu-link hover:text-blue-700">Odio digital</a></li><li><a href="#futuro-hero" class="menu-link hover:text-blue-700">Futuro</a></li><li><a href="#invasion-hero" class="menu-link hover:text-blue-700">¿Invasión digital?</a></li></ul></div>
-            <div><h4 class="text-xl font-bold text-[#2C2973] mb-6 border-b border-[#2C2973] pb-2">Conversaciones</h4><ul class="space-y-4 text-slate-700"><li><a href="#deseo-content" class="menu-link hover:text-blue-700">Perla Zelmanovich</a></li><li><a href="#conjuntos-content" class="menu-link hover:text-blue-700">Gabriel Kessler</a></li><li><a href="#odio-content" class="menu-link hover:text-blue-700">Emmanuel Kahan</a></li><li><a href="#futuro-content" class="menu-link hover:text-blue-700">Isol</a></li><li><a href="#invasion-content" class="menu-link hover:text-blue-700">Inés Dussel</a></li></ul></div>
-            <div><h4 class="text-xl font-bold text-[#2C2973] mb-6 border-b border-[#2C2973] pb-2">Bios</h4><ul class="space-y-4 text-slate-700"><li><a href="bio_perla.html" class="hover:text-blue-700">Perla Zelmanovich</a></li><li><a href="bio_gabriel.html" class="hover:text-blue-700">Gabriel Kessler</a></li><li><a href="bio_emmanuel.html" class="hover:text-blue-700">Emmanuel Kahan</a></li><li><a href="bio_isol.html" class="hover:text-blue-700">Isol</a></li><li><a href="bio_ines.html" class="hover:text-blue-700">Inés Dussel</a></li></ul></div>
-        </div>
-    </div>
-
     <main>
-        <section id="inicio" class="page-section bg-[#2C2973] text-white">
-            <div class="max-w-3xl mx-auto text-left">
-                <h2 class="text-5xl md:text-6xl font-bold mb-8 leading-tight">Dilemas de la ciudadanía contemporánea</h2>
-                <p class="text-xl leading-relaxed font-light opacity-90">
-                    Esta colección de viñetas y entrevistas pretende abrir conversaciones sobre los modos en que estamos y vivimos juntos en el mundo de hoy. Planteamos cinco dilemas de la ciudadanía a partir de dibujos de Isol y video entrevistas con especialistas en temas que cruzan la experiencia cotidiana compartida. Los desafíos de la vida en común, la expansión de los discursos de odio, las subjetividades que se construyen en nuestra vida conectados, la algoritmización de las sociedades y las dificultades para pensar en el futuro como proyecto colectivo son algunas de las cuestiones que proponemos plantear. 
-                    <br><br>Son recursos que pueden usarse en el aula, en formación docente o en otros espacios en los que aparezcan preguntas sobre la ciudadanía en estos tiempos.
-                </p>
-            </div>
-        </section>
-
-        <!-- SECCIÓN SELECTOR -->
-        <section id="selector" class="py-20 px-6 bg-[#fdfbf7]">
-            <div class="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-                <div class="bg-[#2C2973] text-white p-8 flex items-center justify-center min-h-[200px]">
-                    <h3 class="text-3xl font-bold italic">Elije un dilema</h3>
-                </div>
-                <a href="#deseo-hero" class="group block overflow-hidden rounded-lg shadow-lg hover:scale-105 transition-transform bg-white">
-                    <img src="images/deseo_cumplido_resized.jpeg" alt="Deseo cumplido" class="w-full h-40 object-cover">
-                    <div class="p-4 font-bold text-center text-[#2C2973]">Deseo cumplido</div>
-                </a>
-                <a href="#conjuntos-hero" class="group block overflow-hidden rounded-lg shadow-lg hover:scale-105 transition-transform bg-white">
-                    <img src="images/conjuntos_resized.jpeg" alt="Conjuntos" class="w-full h-40 object-cover">
-                    <div class="p-4 font-bold text-center text-[#2C2973]">Conjuntos</div>
-                </a>
-                <a href="#odio-hero" class="group block overflow-hidden rounded-lg shadow-lg hover:scale-105 transition-transform bg-white">
-                    <img src="images/odio_digital_resized.jpeg" alt="Odio digital" class="w-full h-40 object-cover">
-                    <div class="p-4 font-bold text-center text-[#2C2973]">Odio digital</div>
-                </a>
-                <a href="#futuro-hero" class="group block overflow-hidden rounded-lg shadow-lg hover:scale-105 transition-transform bg-white">
-                    <img src="images/futuro_resized.jpeg" alt="Futuro" class="w-full h-40 object-cover">
-                    <div class="p-4 font-bold text-center text-[#2C2973]">Futuro</div>
-                </a>
-                <a href="#invasion-hero" class="group block overflow-hidden rounded-lg shadow-lg hover:scale-105 transition-transform bg-white">
-                    <img src="images/invasion_digital_resized.jpeg" alt="Invasión digital" class="w-full h-40 object-cover">
-                    <div class="p-4 font-bold text-center text-[#2C2973]">¿Invasión digital?</div>
-                </a>
-            </div>
-        </section>
 
         <!-- SECCIONES DE DILEMAS -->
         <section id="deseo-title" class="title-section"><h2 class="text-6xl md:text-8xl italic text-[#2C2973]">Deseo cumplido</h2></section>
