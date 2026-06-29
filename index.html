@@ -3,9 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dilemas de la ciudadanía contemporánea</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Dilemas de la ciudadanía contemporánea | Proyecto de Ciudadanía Digital</title>
+    <meta name="description" content="Cinco dilemas sobre la vida en común, algoritmos, odio digital y futuro. Conversaciones y viñetas para el aula.">
+    
+    <!-- Open Graph para compartir en WhatsApp/Redes -->
+    <meta property="og:title" content="Dilemas de la ciudadanía contemporánea">
+    <meta property="og:description" content="Conversaciones y viñetas sobre los modos en que vivimos juntos en el mundo digital de hoy.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="images/deseo_cumplido_resized.jpeg">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    
     <style>
         body { font-family: 'Inter', sans-serif; background-color: #fdfbf7; color: #1a1a1a; }
         h1, h2, h3, h4 { font-family: 'Playfair Display', serif; }
@@ -20,34 +32,28 @@
         .video-container img { transition: all 0.3s ease; }
         
         .video-container::after {
-            content: '▶';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            font-size: 5rem;
-            color: white;
-            opacity: 0.8;
-            text-shadow: 0 4px 10px rgba(0,0,0,0.5);
-            pointer-events: none;
+            content: '▶'; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+            font-size: 5rem; color: white; opacity: 0.8; text-shadow: 0 4px 10px rgba(0,0,0,0.5); pointer-events: none;
         }
     </style>
 </head>
 <body class="leading-relaxed">
 
-    <nav id="main-nav" class="fixed top-0 w-full z-50 py-4 px-6 bg-white text-[#201E59] shadow-md">
+    <!-- Navegación Principal -->
+    <nav id="main-nav" class="fixed top-0 w-full z-50 py-4 px-6 bg-white text-[#201E59] shadow-md" role="navigation" aria-label="Navegación principal">
         <div class="max-w-5xl mx-auto flex justify-between items-center">
             <h1 class="text-xl font-bold italic tracking-tight hidden md:block">Dilemas de la ciudadanía</h1>
             <div class="flex items-center gap-6">
                 <a href="#inicio" class="text-sm font-semibold uppercase tracking-wider hover:text-blue-700">Inicio</a>
-                <button id="nav-toggle" class="text-sm font-semibold uppercase tracking-wider hover:text-blue-700 focus:outline-none">Navegación</button>
+                <button id="nav-toggle" aria-expanded="false" class="text-sm font-semibold uppercase tracking-wider hover:text-blue-700 focus:outline-none">Navegación</button>
                 <a href="#creditos" class="text-sm font-semibold uppercase tracking-wider hover:text-blue-700">Créditos</a>
             </div>
         </div>
     </nav>
 
-    <div id="menu-overlay" class="fixed inset-0 bg-[#fdfbf7] z-[100] opacity-0 invisible flex items-center justify-center p-8">
-        <button id="close-menu" class="absolute top-8 right-8 text-4xl text-[#2C2973]">&times;</button>
+    <!-- Menú Overlay -->
+    <div id="menu-overlay" class="fixed inset-0 bg-[#fdfbf7] z-[100] opacity-0 invisible flex items-center justify-center p-8" aria-hidden="true">
+        <button id="close-menu" class="absolute top-8 right-8 text-4xl text-[#2C2973]" aria-label="Cerrar menú">&times;</button>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-12 text-center max-w-5xl w-full">
             <div><h4 class="text-xl font-bold text-[#2C2973] mb-6 border-b border-[#2C2973] pb-2">Viñetas</h4><ul class="space-y-4 text-slate-700"><li><a href="#deseo-hero" class="menu-link hover:text-blue-700">Deseo cumplido</a></li><li><a href="#conjuntos-hero" class="menu-link hover:text-blue-700">Conjuntos</a></li><li><a href="#odio-hero" class="menu-link hover:text-blue-700">Odio digital</a></li><li><a href="#futuro-hero" class="menu-link hover:text-blue-700">Futuro</a></li><li><a href="#invasion-hero" class="menu-link hover:text-blue-700">¿Invasión digital?</a></li></ul></div>
             <div><h4 class="text-xl font-bold text-[#2C2973] mb-6 border-b border-[#2C2973] pb-2">Conversaciones</h4><ul class="space-y-4 text-slate-700"><li><a href="#deseo-content" class="menu-link hover:text-blue-700">Perla Zelmanovich</a></li><li><a href="#conjuntos-content" class="menu-link hover:text-blue-700">Gabriel Kessler</a></li><li><a href="#odio-content" class="menu-link hover:text-blue-700">Emmanuel Kahan</a></li><li><a href="#futuro-content" class="menu-link hover:text-blue-700">Isol</a></li><li><a href="#invasion-content" class="menu-link hover:text-blue-700">Inés Dussel</a></li></ul></div>
@@ -61,81 +67,68 @@
                 <h2 class="text-5xl md:text-6xl font-bold mb-8 leading-tight">Dilemas de la ciudadanía contemporánea</h2>
                 <p class="text-xl leading-relaxed font-light opacity-90">
                     Esta colección de viñetas y entrevistas pretende abrir conversaciones sobre los modos en que estamos y vivimos juntos en el mundo de hoy. Planteamos cinco dilemas de la ciudadanía a partir de dibujos de Isol y video entrevistas con especialistas en temas que cruzan la experiencia cotidiana compartida. Los desafíos de la vida en común, la expansión de los discursos de odio, las subjetividades que se construyen en nuestra vida conectados, la algoritmización de las sociedades y las dificultades para pensar en el futuro como proyecto colectivo son algunas de las cuestiones que proponemos plantear. 
-                    <br><br>Son recursos que pueden usarse en el aula, en formación docente o en otros espacios en los que aparezcan preguntas sobre la ciudadanía en estos tiempos.
                 </p>
             </div>
         </section>
 
+        <!-- Selector -->
         <section id="selector" class="py-20 px-6 bg-[#fdfbf7]">
             <div class="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
                 <div class="bg-[#2C2973] text-white p-8 flex items-center justify-center min-h-[200px]">
                     <h3 class="text-3xl font-bold italic">Elije un dilema</h3>
                 </div>
-                <a href="#deseo-hero" class="group block overflow-hidden rounded-lg shadow-lg hover:scale-105 transition-transform bg-white">
-                    <img src="images/deseo_cumplido_resized.jpeg" alt="Deseo cumplido" class="w-full h-40 object-contain">
-                    <div class="p-4 font-bold text-center text-[#2C2973]">Deseo cumplido</div>
-                </a>
-                <a href="#conjuntos-hero" class="group block overflow-hidden rounded-lg shadow-lg hover:scale-105 transition-transform bg-white">
-                    <img src="images/conjuntos_resized.jpeg" alt="Conjuntos" class="w-full h-40 object-contain">
-                    <div class="p-4 font-bold text-center text-[#2C2973]">Conjuntos</div>
-                </a>
-                <a href="#odio-hero" class="group block overflow-hidden rounded-lg shadow-lg hover:scale-105 transition-transform bg-white">
-                    <img src="images/odio_digital_resized.jpeg" alt="Odio digital" class="w-full h-40 object-contain">
-                    <div class="p-4 font-bold text-center text-[#2C2973]">Odio digital</div>
-                </a>
-                <a href="#futuro-hero" class="group block overflow-hidden rounded-lg shadow-lg hover:scale-105 transition-transform bg-white">
-                    <img src="images/futuro_resized.jpeg" alt="Futuro" class="w-full h-40 object-contain">
-                    <div class="p-4 font-bold text-center text-[#2C2973]">Futuro</div>
-                </a>
-                <a href="#invasion-hero" class="group block overflow-hidden rounded-lg shadow-lg hover:scale-105 transition-transform bg-white">
-                    <img src="images/invasion_digital_resized.jpeg" alt="Invasión digital" class="w-full h-40 object-contain">
-                    <div class="p-4 font-bold text-center text-[#2C2973]">¿Invasión digital?</div>
-                </a>
+                <!-- Cada tarjeta con su picture -->
+                <a href="#deseo-hero" class="group block overflow-hidden rounded-lg shadow-lg hover:scale-105 transition-transform bg-white"><picture><source media="(max-width: 768px)" srcset="images/deseo_cumplido_resized_celular.jpeg"><img src="images/deseo_cumplido_resized.jpeg" alt="Deseo cumplido" width="400" height="300" loading="lazy" decoding="async" class="w-full h-40 object-contain"></picture><div class="p-4 font-bold text-center text-[#2C2973]">Deseo cumplido</div></a>
+                <a href="#conjuntos-hero" class="group block overflow-hidden rounded-lg shadow-lg hover:scale-105 transition-transform bg-white"><picture><source media="(max-width: 768px)" srcset="images/conjuntos_resized_celular.jpeg"><img src="images/conjuntos_resized.jpeg" alt="Conjuntos" width="400" height="300" loading="lazy" decoding="async" class="w-full h-40 object-contain"></picture><div class="p-4 font-bold text-center text-[#2C2973]">Conjuntos</div></a>
+                <a href="#odio-hero" class="group block overflow-hidden rounded-lg shadow-lg hover:scale-105 transition-transform bg-white"><picture><source media="(max-width: 768px)" srcset="images/odio_digital_resized_celular.jpeg"><img src="images/odio_digital_resized.jpeg" alt="Odio digital" width="400" height="300" loading="lazy" decoding="async" class="w-full h-40 object-contain"></picture><div class="p-4 font-bold text-center text-[#2C2973]">Odio digital</div></a>
+                <a href="#futuro-hero" class="group block overflow-hidden rounded-lg shadow-lg hover:scale-105 transition-transform bg-white"><picture><source media="(max-width: 768px)" srcset="images/futuro_resized_celular.jpeg"><img src="images/futuro_resized.jpeg" alt="Futuro" width="400" height="300" loading="lazy" decoding="async" class="w-full h-40 object-contain"></picture><div class="p-4 font-bold text-center text-[#2C2973]">Futuro</div></a>
+                <a href="#invasion-hero" class="group block overflow-hidden rounded-lg shadow-lg hover:scale-105 transition-transform bg-white"><picture><source media="(max-width: 768px)" srcset="images/invasion_digital_resized_celular.jpeg"><img src="images/invasion_digital_resized.jpeg" alt="Invasión digital" width="400" height="300" loading="lazy" decoding="async" class="w-full h-40 object-contain"></picture><div class="p-4 font-bold text-center text-[#2C2973]">¿Invasión digital?</div></a>
             </div>
         </section>
 
+        <!-- SECCIONES DE CONTENIDO -->
+        <!-- Deseo -->
         <section id="deseo-title" class="title-section"><h2 class="text-6xl md:text-8xl italic text-[#2C2973]">Deseo cumplido</h2></section>
-        <section id="deseo-hero" class="hero-section"><img src="images/deseo_cumplido_resized.jpeg" alt="Deseo cumplido" class="w-full h-screen object-contain"></section>
+        <section id="deseo-hero" class="hero-section"><picture><source media="(max-width: 768px)" srcset="images/deseo_cumplido_resized_celular.jpeg"><img src="images/deseo_cumplido_resized.jpeg" alt="Deseo cumplido" width="1080" height="1920" loading="lazy" decoding="async" class="w-full h-full object-contain"></picture></section>
         <section id="deseo-content" class="page-section max-w-3xl mx-auto">
             <h2 class="text-5xl font-bold text-[#2C2973] mb-6">Deseo cumplido</h2>
-            <p class="text-lg text-slate-800 mb-8 leading-relaxed">La experiencia cotidiana está mediada por algoritmos: hoy cualquier pantalla responde a nuestros deseos y nos propone otros sin pausa. El orden algorítmico nos vende formas de ser, de ver y de mostrarnos. ¿Qué efectos tiene sobre la vida en común? <br><br> En esta charla Inés Dussel y la psicoanalista Perla Zelmanovich conversan sobre las subjetividades en el tiempo contemporáneo.</p>
-            <div class="video-container mb-8 shadow-lg rounded-sm" onclick="playVideo(this, 'LnekXTxDyHI')"><img src="images/deseo_cumplido_resized.jpeg" class="w-full h-full object-contain"></div>
+            <div class="video-container mb-8 shadow-lg rounded-sm" onclick="playVideo(this, 'LnekXTxDyHI')"><picture><source media="(max-width: 768px)" srcset="images/deseo_cumplido_resized_celular.jpeg"><img src="images/deseo_cumplido_resized.jpeg" alt="Video Deseo" width="640" height="360" loading="lazy" decoding="async" class="w-full h-full object-contain"></picture></div>
             <a href="bio_perla.html" class="text-blue-700 font-bold border-b-2 border-blue-700">Bio Perla Zelmanovich →</a>
         </section>
 
+        <!-- Conjuntos -->
         <section id="conjuntos-title" class="title-section"><h2 class="text-6xl md:text-8xl italic text-[#2C2973]">Conjuntos</h2></section>
-        <section id="conjuntos-hero" class="hero-section"><img src="images/conjuntos_resized.jpeg" alt="Conjuntos" class="w-full h-screen object-contain"></section>
+        <section id="conjuntos-hero" class="hero-section"><picture><source media="(max-width: 768px)" srcset="images/conjuntos_resized_celular.jpeg"><img src="images/conjuntos_resized.jpeg" alt="Conjuntos" width="1080" height="1920" loading="lazy" decoding="async" class="w-full h-full object-contain"></picture></section>
         <section id="conjuntos-content" class="page-section max-w-3xl mx-auto">
             <h2 class="text-5xl font-bold text-[#2C2973] mb-6">Conjuntos</h2>
-            <p class="text-lg text-slate-800 mb-8 leading-relaxed">Vivimos en una era de múltiples fragmentaciones en un mundo en el que muy pocos concentran mucha riqueza. ¿Cuáles son las desigualdades más marcadas en estos tiempos y qué horizontes de igualdad se pueden percibir? <br><br> En esta charla Inés Dussel y el sociólogo Gabriel Kessler conversan sobre la necesidad de repensar lo común ante la desigualdad.</p>
-            <div class="video-container mb-8 shadow-lg rounded-sm" onclick="playVideo(this, '8q-tCaMi4Do')"><img src="images/conjuntos_resized.jpeg" class="w-full h-full object-contain"></div>
+            <div class="video-container mb-8 shadow-lg rounded-sm" onclick="playVideo(this, '8q-tCaMi4Do')"><picture><source media="(max-width: 768px)" srcset="images/conjuntos_resized_celular.jpeg"><img src="images/conjuntos_resized.jpeg" alt="Video Conjuntos" width="640" height="360" loading="lazy" decoding="async" class="w-full h-full object-contain"></picture></div>
             <a href="bio_gabriel.html" class="text-blue-700 font-bold border-b-2 border-blue-700">Bio Gabriel Kessler →</a>
         </section>
 
+        <!-- Odio digital -->
         <section id="odio-title" class="title-section"><h2 class="text-6xl md:text-8xl italic text-[#2C2973]">Odio digital</h2></section>
-        <section id="odio-hero" class="hero-section"><img src="images/odio_digital_resized.jpeg" alt="Odio Digital" class="w-full h-screen object-contain"></section>
+        <section id="odio-hero" class="hero-section"><picture><source media="(max-width: 768px)" srcset="images/odio_digital_resized_celular.jpeg"><img src="images/odio_digital_resized.jpeg" alt="Odio Digital" width="1080" height="1920" loading="lazy" decoding="async" class="w-full h-full object-contain"></picture></section>
         <section id="odio-content" class="page-section max-w-3xl mx-auto">
             <h2 class="text-5xl font-bold text-[#2C2973] mb-6">Odio digital</h2>
-            <p class="text-lg text-slate-800 mb-8 leading-relaxed">El discurso público en redes sociales tiene mucho de odio y poco de encuentro. ¿Por qué crecen y se viralizan los discursos de odio en estos tiempos? ¿Qué podemos hacer para reconocernos en la diferencia desde el respeto y la tolerancia? <br><br> En esta charla Inés Dussel y el historiador Emmanuel Kahan conversan sobre los discursos de odio en este y en otros tiempos.</p>
-            <div class="video-container mb-8 shadow-lg rounded-sm" onclick="playVideo(this, 'wg23lEiNEQo')"><img src="images/odio_digital_resized.jpeg" class="w-full h-full object-contain"></div>
+            <div class="video-container mb-8 shadow-lg rounded-sm" onclick="playVideo(this, 'wg23lEiNEQo')"><picture><source media="(max-width: 768px)" srcset="images/odio_digital_resized_celular.jpeg"><img src="images/odio_digital_resized.jpeg" alt="Video Odio digital" width="640" height="360" loading="lazy" decoding="async" class="w-full h-full object-contain"></picture></div>
             <a href="bio_emmanuel.html" class="text-blue-700 font-bold border-b-2 border-blue-700">Bio Emmanuel Kahan →</a>
         </section>
 
+        <!-- Futuro -->
         <section id="futuro-title" class="title-section"><h2 class="text-6xl md:text-8xl italic text-[#2C2973]">Futuro</h2></section>
-        <section id="futuro-hero" class="hero-section"><img src="images/futuro_resized.jpeg" alt="Futuro" class="w-full h-screen object-contain"></section>
+        <section id="futuro-hero" class="hero-section"><picture><source media="(max-width: 768px)" srcset="images/futuro_resized_celular.jpeg"><img src="images/futuro_resized.jpeg" alt="Futuro" width="1080" height="1920" loading="lazy" decoding="async" class="w-full h-full object-contain"></picture></section>
         <section id="futuro-content" class="page-section max-w-3xl mx-auto">
             <h2 class="text-5xl font-bold text-[#2C2973] mb-6">Futuro</h2>
-            <p class="text-lg text-slate-800 mb-8 leading-relaxed">¿Cómo imaginamos el futuro? Más allá de las versiones distópicas de un mundo arrasado y las tecno utopías, pensar desde el arte puede ayudar a avizorar otros futuros. <br><br> En esta charla, Inés Dussel e Isol conversan acerca de distintas ideas de futuro y la condiciones para imaginar un mundo mejor.</p>
-            <div class="video-container mb-8 shadow-lg rounded-sm" onclick="playVideo(this, 'u8tTEDl6ocA')"><img src="images/futuro_resized.jpeg" class="w-full h-full object-contain"></div>
+            <div class="video-container mb-8 shadow-lg rounded-sm" onclick="playVideo(this, 'u8tTEDl6ocA')"><picture><source media="(max-width: 768px)" srcset="images/futuro_resized_celular.jpeg"><img src="images/futuro_resized.jpeg" alt="Video Futuro" width="640" height="360" loading="lazy" decoding="async" class="w-full h-full object-contain"></picture></div>
             <a href="bio_isol.html" class="text-blue-700 font-bold border-b-2 border-blue-700">Bio Isol →</a>
         </section>
 
+        <!-- Invasión digital -->
         <section id="invasion-title" class="title-section"><h2 class="text-6xl md:text-8xl italic text-[#2C2973]">¿Invasión digital?</h2></section>
-        <section id="invasion-hero" class="hero-section"><img src="images/invasion_digital_resized.jpeg" alt="Invasión Digital" class="w-full h-screen object-contain"></section>
+        <section id="invasion-hero" class="hero-section"><picture><source media="(max-width: 768px)" srcset="images/invasion_digital_resized_celular.jpeg"><img src="images/invasion_digital_resized.jpeg" alt="Invasión Digital" width="1080" height="1920" loading="lazy" decoding="async" class="w-full h-full object-contain"></picture></section>
         <section id="invasion-content" class="page-section max-w-3xl mx-auto">
             <h2 class="text-5xl font-bold text-[#2C2973] mb-6">¿Invasión digital?</h2>
-            <p class="text-lg text-slate-800 mb-8 leading-relaxed">¿Vivimos demasiado conectados? Internet y las redes sociales han funcionado como infraestructura tecnológica de nuevos tipos de participación ciudadana pero también como arenas de discursos de odio y desinformación. ¿Se puede pensar modelos alternativos? <br><br> En esta charla, Patricia Ferrante e Inés Dussel conversan sobre la ciudadanía conectada.</p>
-            <div class="video-container mb-8 shadow-lg rounded-sm" onclick="playVideo(this, 'LulRJR9faiQ')"><img src="images/invasion_digital_resized.jpeg" class="w-full h-full object-contain"></div>
+            <div class="video-container mb-8 shadow-lg rounded-sm" onclick="playVideo(this, 'LulRJR9faiQ')"><picture><source media="(max-width: 768px)" srcset="images/invasion_digital_resized_celular.jpeg"><img src="images/invasion_digital_resized.jpeg" alt="Video Invasión" width="640" height="360" loading="lazy" decoding="async" class="w-full h-full object-contain"></picture></div>
             <a href="bio_ines.html" class="text-blue-700 font-bold border-b-2 border-blue-700">Bio Inés Dussel →</a>
         </section>
 
@@ -180,6 +173,7 @@
             element.appendChild(iframe);
         }
 
+        // Lógica de navegación persistente
         window.addEventListener('scroll', () => {
             const inicio = document.getElementById('inicio');
             const rect = inicio.getBoundingClientRect();
@@ -187,15 +181,7 @@
         });
 
         window.addEventListener('mousemove', (e) => {
-            if (e.clientY < 60) {
-                nav.style.transform = 'translateY(0)';
-            } else {
-                const inicio = document.getElementById('inicio');
-                const rect = inicio.getBoundingClientRect();
-                if (rect.bottom < 50) {
-                    nav.style.transform = 'translateY(-100%)';
-                }
-            }
+            if (e.clientY < 60) nav.style.transform = 'translateY(0)';
         });
     </script>
 </body>
