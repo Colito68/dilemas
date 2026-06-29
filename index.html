@@ -6,10 +6,11 @@
     <title>Dilemas de la ciudadanía contemporánea | Proyecto de Ciudadanía Digital</title>
     <meta name="description" content="Cinco dilemas sobre la vida en común, algoritmos, odio digital y futuro. Conversaciones y viñetas para el aula.">
     
+    <!-- Open Graph -->
     <meta property="og:title" content="Dilemas de la ciudadanía contemporánea">
-    <meta property="og:description" content="Conversaciones y viñetas sobre los modos en que vivimos juntos en el mundo digital de hoy.">
+    <meta property="og:description" content="Cinco dilemas sobre la vida en común, algoritmos, odio digital y futuro. Conversaciones y viñetas para el aula.">
     <meta property="og:type" content="website">
-
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
@@ -20,8 +21,7 @@
         body { font-family: 'Inter', sans-serif; background-color: #fdfbf7; color: #1a1a1a; }
         h1, h2, h3, h4 { font-family: 'Playfair Display', serif; }
         .page-section { min-height: 100vh; display: flex; flex-direction: column; justify-content: center; padding: 4rem 1.5rem; border-bottom: 1px solid #e5e7eb; }
-        .hero-section { height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 0; overflow: hidden; }
-        .title-section { min-height: 100vh; display: flex; align-items: center; justify-content: center; padding: 4rem; background-color: #fdfbf7; }
+        .hero-section { height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 0; overflow: hidden; background-color: #fdfbf7; }
         nav { transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1); }
         #menu-overlay { transition: opacity 0.3s ease, visibility 0.3s; }
         
@@ -37,7 +37,7 @@
 </head>
 <body class="leading-relaxed">
 
-    <nav id="main-nav" class="fixed top-0 w-full z-50 py-4 px-6 bg-white text-[#201E59] shadow-md" role="navigation" aria-label="Navegación principal">
+    <nav id="main-nav" class="fixed top-0 w-full z-50 py-4 px-6 bg-white text-[#201E59] shadow-md" role="navigation">
         <div class="max-w-5xl mx-auto flex justify-between items-center">
             <h1 class="text-xl font-bold italic tracking-tight hidden md:block">Dilemas de la ciudadanía</h1>
             <div class="flex items-center gap-6">
@@ -48,8 +48,8 @@
         </div>
     </nav>
 
-    <div id="menu-overlay" class="fixed inset-0 bg-[#fdfbf7] z-[100] opacity-0 invisible flex items-center justify-center p-8" aria-hidden="true">
-        <button id="close-menu" class="absolute top-8 right-8 text-4xl text-[#2C2973]" aria-label="Cerrar menú">&times;</button>
+    <div id="menu-overlay" class="fixed inset-0 bg-[#fdfbf7] z-[100] opacity-0 invisible flex items-center justify-center p-8">
+        <button id="close-menu" class="absolute top-8 right-8 text-4xl text-[#2C2973]">&times;</button>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-12 text-center max-w-5xl w-full">
             <div><h4 class="text-xl font-bold text-[#2C2973] mb-6 border-b border-[#2C2973] pb-2">Viñetas</h4><ul class="space-y-4 text-slate-700"><li><a href="#deseo-hero" class="menu-link hover:text-blue-700">Deseo cumplido</a></li><li><a href="#conjuntos-hero" class="menu-link hover:text-blue-700">Conjuntos</a></li><li><a href="#odio-hero" class="menu-link hover:text-blue-700">Odio digital</a></li><li><a href="#futuro-hero" class="menu-link hover:text-blue-700">Futuro</a></li><li><a href="#invasion-hero" class="menu-link hover:text-blue-700">¿Invasión digital?</a></li></ul></div>
             <div><h4 class="text-xl font-bold text-[#2C2973] mb-6 border-b border-[#2C2973] pb-2">Conversaciones</h4><ul class="space-y-4 text-slate-700"><li><a href="#deseo-content" class="menu-link hover:text-blue-700">Perla Zelmanovich</a></li><li><a href="#conjuntos-content" class="menu-link hover:text-blue-700">Gabriel Kessler</a></li><li><a href="#odio-content" class="menu-link hover:text-blue-700">Emmanuel Kahan</a></li><li><a href="#futuro-content" class="menu-link hover:text-blue-700">Isol</a></li><li><a href="#invasion-content" class="menu-link hover:text-blue-700">Inés Dussel</a></li></ul></div>
@@ -68,84 +68,51 @@
             </div>
         </section>
 
-        <!-- Selector: Imágenes estándar -->
+        <!-- Selector -->
         <section id="selector" class="py-20 px-6 bg-[#fdfbf7]">
             <div class="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-                <div class="bg-[#2C2973] text-white p-8 flex items-center justify-center min-h-[200px]">
-                    <h3 class="text-3xl font-bold italic">Elije un dilema</h3>
-                </div>
-                <a href="#deseo-hero" class="group block overflow-hidden rounded-lg shadow-lg hover:scale-105 transition-transform bg-white"><img src="images/deseo_cumplido_resized.jpeg" alt="Deseo cumplido" width="400" height="300" loading="lazy" class="w-full h-40 object-cover"><div class="p-4 font-bold text-center text-[#2C2973]">Deseo cumplido</div></a>
-                <a href="#conjuntos-hero" class="group block overflow-hidden rounded-lg shadow-lg hover:scale-105 transition-transform bg-white"><img src="images/conjuntos_resized.jpeg" alt="Conjuntos" width="400" height="300" loading="lazy" class="w-full h-40 object-cover"><div class="p-4 font-bold text-center text-[#2C2973]">Conjuntos</div></a>
-                <a href="#odio-hero" class="group block overflow-hidden rounded-lg shadow-lg hover:scale-105 transition-transform bg-white"><img src="images/odio_digital_resized.jpeg" alt="Odio digital" width="400" height="300" loading="lazy" class="w-full h-40 object-cover"><div class="p-4 font-bold text-center text-[#2C2973]">Odio digital</div></a>
-                <a href="#futuro-hero" class="group block overflow-hidden rounded-lg shadow-lg hover:scale-105 transition-transform bg-white"><img src="images/futuro_resized.jpeg" alt="Futuro" width="400" height="300" loading="lazy" class="w-full h-40 object-cover"><div class="p-4 font-bold text-center text-[#2C2973]">Futuro</div></a>
-                <a href="#invasion-hero" class="group block overflow-hidden rounded-lg shadow-lg hover:scale-105 transition-transform bg-white"><img src="images/invasion_digital_resized.jpeg" alt="Invasión digital" width="400" height="300" loading="lazy" class="w-full h-40 object-cover"><div class="p-4 font-bold text-center text-[#2C2973]">¿Invasión digital?</div></a>
+                <div class="bg-[#2C2973] text-white p-8 flex items-center justify-center min-h-[200px]"><h3 class="text-3xl font-bold italic">Elije un dilema</h3></div>
+                <a href="#deseo-hero" class="group block overflow-hidden rounded-lg shadow-lg hover:scale-105 transition-transform bg-white"><img src="images/deseo_cumplido_resized.jpeg" alt="Deseo cumplido" class="w-full h-40 object-cover"><div class="p-4 font-bold text-center text-[#2C2973]">Deseo cumplido</div></a>
+                <a href="#conjuntos-hero" class="group block overflow-hidden rounded-lg shadow-lg hover:scale-105 transition-transform bg-white"><img src="images/conjuntos_resized.jpeg" alt="Conjuntos" class="w-full h-40 object-cover"><div class="p-4 font-bold text-center text-[#2C2973]">Conjuntos</div></a>
+                <a href="#odio-hero" class="group block overflow-hidden rounded-lg shadow-lg hover:scale-105 transition-transform bg-white"><img src="images/odio_digital_resized.jpeg" alt="Odio digital" class="w-full h-40 object-cover"><div class="p-4 font-bold text-center text-[#2C2973]">Odio digital</div></a>
+                <a href="#futuro-hero" class="group block overflow-hidden rounded-lg shadow-lg hover:scale-105 transition-transform bg-white"><img src="images/futuro_resized.jpeg" alt="Futuro" class="w-full h-40 object-cover"><div class="p-4 font-bold text-center text-[#2C2973]">Futuro</div></a>
+                <a href="#invasion-hero" class="group block overflow-hidden rounded-lg shadow-lg hover:scale-105 transition-transform bg-white"><img src="images/invasion_digital_resized.jpeg" alt="Invasión digital" class="w-full h-40 object-cover"><div class="p-4 font-bold text-center text-[#2C2973]">¿Invasión digital?</div></a>
             </div>
         </section>
 
-        <!-- SECCIONES DE CONTENIDO con <picture> optimizado para orientación -->
-        
-        <!-- Deseo -->
-        <section id="deseo-hero" class="hero-section">
-            <picture>
-                <source media="(max-width: 768px) and (orientation: portrait)" srcset="images/deseo_cumplido_resized_celular.jpeg">
-                <img src="images/deseo_cumplido_resized.jpeg" alt="Deseo cumplido" width="1080" height="1920" loading="lazy" class="w-full h-full object-contain">
-            </picture>
-        </section>
+        <!-- Dilemas Hero -->
+        <section id="deseo-hero" class="hero-section"><picture><source media="(max-width: 768px)" srcset="images/deseo_cumplido_resized_celular.jpeg"><img src="images/deseo_cumplido_resized.jpeg" alt="Deseo cumplido" class="w-full h-full object-contain"></picture></section>
         <section id="deseo-content" class="page-section max-w-3xl mx-auto">
             <h2 class="text-5xl font-bold text-[#2C2973] mb-6">Deseo cumplido</h2>
-            <div class="video-container mb-8 shadow-lg rounded-sm" onclick="playVideo(this, 'LnekXTxDyHI')"><img src="images/deseo_cumplido_resized.jpeg" alt="Video Deseo" class="w-full h-full object-cover"></div>
+            <div class="video-container mb-8 shadow-lg rounded-sm" onclick="playVideo(this, 'LnekXTxDyHI')"><img src="images/deseo_cumplido_resized.jpeg" class="w-full h-full object-contain"></div>
             <a href="bio_perla.html" class="text-blue-700 font-bold border-b-2 border-blue-700">Bio Perla Zelmanovich →</a>
         </section>
 
-        <!-- Conjuntos -->
-        <section id="conjuntos-hero" class="hero-section">
-            <picture>
-                <source media="(max-width: 768px) and (orientation: portrait)" srcset="images/conjuntos_resized_celular.jpeg">
-                <img src="images/conjuntos_resized.jpeg" alt="Conjuntos" width="1080" height="1920" loading="lazy" class="w-full h-full object-contain">
-            </picture>
-        </section>
+        <section id="conjuntos-hero" class="hero-section"><picture><source media="(max-width: 768px)" srcset="images/conjuntos_resized_celular.jpeg"><img src="images/conjuntos_resized.jpeg" alt="Conjuntos" class="w-full h-full object-contain"></picture></section>
         <section id="conjuntos-content" class="page-section max-w-3xl mx-auto">
             <h2 class="text-5xl font-bold text-[#2C2973] mb-6">Conjuntos</h2>
-            <div class="video-container mb-8 shadow-lg rounded-sm" onclick="playVideo(this, '8q-tCaMi4Do')"><img src="images/conjuntos_resized.jpeg" alt="Video Conjuntos" class="w-full h-full object-cover"></div>
+            <div class="video-container mb-8 shadow-lg rounded-sm" onclick="playVideo(this, '8q-tCaMi4Do')"><img src="images/conjuntos_resized.jpeg" class="w-full h-full object-contain"></div>
             <a href="bio_gabriel.html" class="text-blue-700 font-bold border-b-2 border-blue-700">Bio Gabriel Kessler →</a>
         </section>
 
-        <!-- Odio digital -->
-        <section id="odio-hero" class="hero-section">
-            <picture>
-                <source media="(max-width: 768px) and (orientation: portrait)" srcset="images/odio_digital_resized_celular.jpeg">
-                <img src="images/odio_digital_resized.jpeg" alt="Odio Digital" width="1080" height="1920" loading="lazy" class="w-full h-full object-contain">
-            </picture>
-        </section>
+        <section id="odio-hero" class="hero-section"><picture><source media="(max-width: 768px)" srcset="images/odio_digital_resized_celular.jpeg"><img src="images/odio_digital_resized.jpeg" alt="Odio digital" class="w-full h-full object-contain"></picture></section>
         <section id="odio-content" class="page-section max-w-3xl mx-auto">
             <h2 class="text-5xl font-bold text-[#2C2973] mb-6">Odio digital</h2>
-            <div class="video-container mb-8 shadow-lg rounded-sm" onclick="playVideo(this, 'wg23lEiNEQo')"><img src="images/odio_digital_resized.jpeg" alt="Video Odio digital" class="w-full h-full object-cover"></div>
+            <div class="video-container mb-8 shadow-lg rounded-sm" onclick="playVideo(this, 'wg23lEiNEQo')"><img src="images/odio_digital_resized.jpeg" class="w-full h-full object-contain"></div>
             <a href="bio_emmanuel.html" class="text-blue-700 font-bold border-b-2 border-blue-700">Bio Emmanuel Kahan →</a>
         </section>
 
-        <!-- Futuro -->
-        <section id="futuro-hero" class="hero-section">
-            <picture>
-                <source media="(max-width: 768px) and (orientation: portrait)" srcset="images/futuro_resized_celular.jpeg">
-                <img src="images/futuro_resized.jpeg" alt="Futuro" width="1080" height="1920" loading="lazy" class="w-full h-full object-contain">
-            </picture>
-        </section>
+        <section id="futuro-hero" class="hero-section"><picture><source media="(max-width: 768px)" srcset="images/futuro_resized_celular.jpeg"><img src="images/futuro_resized.jpeg" alt="Futuro" class="w-full h-full object-contain"></picture></section>
         <section id="futuro-content" class="page-section max-w-3xl mx-auto">
             <h2 class="text-5xl font-bold text-[#2C2973] mb-6">Futuro</h2>
-            <div class="video-container mb-8 shadow-lg rounded-sm" onclick="playVideo(this, 'u8tTEDl6ocA')"><img src="images/futuro_resized.jpeg" alt="Video Futuro" class="w-full h-full object-cover"></div>
+            <div class="video-container mb-8 shadow-lg rounded-sm" onclick="playVideo(this, 'u8tTEDl6ocA')"><img src="images/futuro_resized.jpeg" class="w-full h-full object-contain"></div>
             <a href="bio_isol.html" class="text-blue-700 font-bold border-b-2 border-blue-700">Bio Isol →</a>
         </section>
 
-        <!-- Invasión digital -->
-        <section id="invasion-hero" class="hero-section">
-            <picture>
-                <source media="(max-width: 768px) and (orientation: portrait)" srcset="images/invasion_digital_resized_celular.jpeg">
-                <img src="images/invasion_digital_resized.jpeg" alt="Invasión Digital" width="1080" height="1920" loading="lazy" class="w-full h-full object-contain">
-            </picture>
-        </section>
+        <section id="invasion-hero" class="hero-section"><picture><source media="(max-width: 768px)" srcset="images/invasion_digital_resized_celular.jpeg"><img src="images/invasion_digital_resized.jpeg" alt="Invasión digital" class="w-full h-full object-contain"></picture></section>
         <section id="invasion-content" class="page-section max-w-3xl mx-auto">
             <h2 class="text-5xl font-bold text-[#2C2973] mb-6">¿Invasión digital?</h2>
-            <div class="video-container mb-8 shadow-lg rounded-sm" onclick="playVideo(this, 'LulRJR9faiQ')"><img src="images/invasion_digital_resized.jpeg" alt="Video Invasión" class="w-full h-full object-cover"></div>
+            <div class="video-container mb-8 shadow-lg rounded-sm" onclick="playVideo(this, 'LulRJR9faiQ')"><img src="images/invasion_digital_resized.jpeg" class="w-full h-full object-contain"></div>
             <a href="bio_ines.html" class="text-blue-700 font-bold border-b-2 border-blue-700">Bio Inés Dussel →</a>
         </section>
 
@@ -161,10 +128,20 @@
         const menuOverlay = document.getElementById('menu-overlay');
         const navToggle = document.getElementById('nav-toggle');
         const closeMenu = document.getElementById('close-menu');
+        const menuLinks = document.querySelectorAll('.menu-link');
         const nav = document.getElementById('main-nav');
         
         const toggleMenu = () => { menuOverlay.classList.toggle('opacity-0'); menuOverlay.classList.toggle('invisible'); };
         
+        menuLinks.forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                toggleMenu();
+                const target = document.querySelector(link.getAttribute('href'));
+                if (target) target.scrollIntoView({ behavior: 'smooth' });
+            });
+        });
+
         navToggle.addEventListener('click', toggleMenu);
         closeMenu.addEventListener('click', toggleMenu);
 
@@ -186,6 +163,10 @@
 
         window.addEventListener('mousemove', (e) => {
             if (e.clientY < 60) nav.style.transform = 'translateY(0)';
+        });
+        
+        window.addEventListener('touchstart', (e) => {
+            if (e.touches[0].clientY < 60) nav.style.transform = 'translateY(0)';
         });
     </script>
 </body>
