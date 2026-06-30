@@ -36,6 +36,21 @@
         }
     </style>
 </head>
+
+    <main>
+        <section id="portada" class="h-screen w-full flex items-center justify-center bg-[#2d2973] p-8">
+            <div class="text-center flex flex-col gap-1 max-w-4xl">
+                <h1 class="font-['Playfair_Display'] font-[800] tracking-tighter text-white text-[50px] md:text-[90px] leading-[0.9]">
+                    Dilemas de la ciudadanía contemporánea
+                </h1>
+                <p class="font-['Playfair_Display'] font-[300] tracking-tighter italic text-[#7c86ff] text-[28px] md:text-[80px] leading-[0.9]">
+                    Recursos para la formación ciudadana
+                </p>
+            </div>
+        </section>
+
+
+
 <body class="leading-relaxed">
 
     <nav id="main-nav" class="fixed top-0 w-full z-50 py-4 px-6 bg-white text-[#201E59] shadow-md" role="navigation">
@@ -59,18 +74,19 @@
     </div>
 
     <main>
-        <section id="inicio" class="page-section bg-[#2C2973] text-white">
+<section id="inicio" class="page-section bg-[#fdfbf7] text-[#2C2973]">
             <div class="max-w-3xl mx-auto text-left">
-                <h2 class="text-5xl md:text-6xl font-bold mb-8 leading-tight">Dilemas de la ciudadanía contemporánea</h2>
-                <p class="text-xl leading-relaxed font-light opacity-90">
-                    Esta colección de viñetas y entrevistas pretende abrir conversaciones sobre los modos en que estamos y vivimos juntos en el mundo de hoy. Planteamos cinco dilemas de la ciudadanía a partir de dibujos de Isol y video entrevistas con especialistas en temas que cruzan la experiencia cotidiana compartida. Los desafíos de la vida en común, la expansión de los discursos de odio, las subjetividades que se construyen en nuestra vida conectados, la algoritmización de las sociedades y las dificultades para pensar en el futuro como proyecto colectivo son algunas de las cuestiones que proponemos plantear. <br><br> Son recursos que pueden usarse en el aula, en formación docente o en otros espacios en los que aparezcan preguntas sobre la ciudadanía en estos tiempos.</p>
-                </p>
+                <div class="text-3xl leading-relaxed font-light space-y-6">
+                    <p>Esta colección de viñetas y entrevistas pretende abrir conversaciones sobre los modos en que estamos y vivimos juntos en el mundo de hoy.</p>
+                    <p>Planteamos cinco dilemas de la ciudadanía a partir de dibujos de Isol y video entrevistas con especialistas en temas que cruzan la experiencia cotidiana compartida. Los desafíos de la vida en común, la expansión de los discursos de odio, las subjetividades que se construyen en nuestra vida conectados, la algoritmización de las sociedades y las dificultades para pensar en el futuro como proyecto colectivo son algunas de las cuestiones que proponemos plantear.</p>
+                    <p>Son recursos que pueden usarse en el aula, en formación docente o en otros espacios en los que aparezcan preguntas sobre la ciudadanía en estos tiempos.</p>
+                </div>
             </div>
         </section>
 
         <section id="selector" class="py-20 px-6 bg-[#fdfbf7]">
             <div class="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-                <div class="bg-[#2C2973] text-white p-8 flex items-center justify-center min-h-[200px]"><h3 class="text-3xl font-bold italic">Elije un dilema</h3></div>
+                <div class="bg-[#2C2973] text-white p-8 flex items-center justify-center min-h-[200px]"><h3 class="text-3xl font-bold italic">Dilemas de la ciudadanía</h3></div>
                 <a href="#deseo-hero" class="group block overflow-hidden rounded-lg shadow-lg hover:scale-105 transition-transform bg-white"><img src="images/deseo_cumplido_resized.jpeg" alt="Deseo cumplido" class="w-full h-40 object-contain"><div class="p-4 font-bold text-center text-[#2C2973]">Deseo cumplido</div></a>
                 <a href="#conjuntos-hero" class="group block overflow-hidden rounded-lg shadow-lg hover:scale-105 transition-transform bg-white"><img src="images/conjuntos_resized.jpeg" alt="Conjuntos" class="w-full h-40 object-contain"><div class="p-4 font-bold text-center text-[#2C2973]">Conjuntos</div></a>
                 <a href="#odio-hero" class="group block overflow-hidden rounded-lg shadow-lg hover:scale-105 transition-transform bg-white"><img src="images/odio_digital_resized.jpeg" alt="Odio digital" class="w-full h-40 object-contain"><div class="p-4 font-bold text-center text-[#2C2973]">Odio digital</div></a>
@@ -79,56 +95,118 @@
             </div>
         </section>
 
-        <!-- Secciones -->
+        <!-- SECCIÓN 1: DESEO CUMPLIDO -->
         <section id="deseo-title" class="title-section"><h2 class="text-6xl md:text-8xl italic text-[#2C2973]">Deseo cumplido</h2></section>
-        <section id="deseo-hero" class="hero-section"><picture><source media="(max-width: 768px)" srcset="images/deseo_cumplido_resized_celular.jpeg"><img src="images/deseo_cumplido_resized.jpeg" alt="Deseo" class="w-full h-[98vh] object-contain"></picture></section>
+        <section id="deseo-hero" class="hero-section">
+            <picture>
+                <source media="(max-width: 768px)" srcset="images/deseo_cumplido_resized_celular.jpeg">
+                <img src="images/deseo_cumplido_resized.jpeg" alt="Deseo cumplido" class="w-full h-auto object-contain">
+            </picture>
+        </section>
         <section id="deseo-content" class="page-section max-w-3xl mx-auto">
             <h2 class="text-5xl font-bold text-[#2C2973] mb-6">Deseo cumplido</h2>
             <p class="text-lg text-slate-800 mb-8 leading-relaxed">La experiencia cotidiana está mediada por algoritmos: hoy cualquier pantalla responde a nuestros deseos y nos propone otros sin pausa. El orden algorítmico nos vende formas de ser, de ver y de mostrarnos. ¿Qué efectos tiene sobre la vida en común? <br><br> En esta charla Inés Dussel y la psicoanalista Perla Zelmanovich conversan sobre las subjetividades en el tiempo contemporáneo.</p>
-            <div class="video-container mb-8 shadow-lg rounded-sm" onclick="playVideo(this, 'LnekXTxDyHI')"><img src="images/deseo_cumplido_resized.jpeg" class="w-full h-auto object-contain"></div>
+            <div class="video-container mb-8 shadow-lg" onclick="playVideo(this, 'LnekXTxDyHI')"><img src="images/deseo_cumplido_resized.jpeg" class="w-full h-auto object-contain"></div>
+            <a href="javascript:void(0)" onclick="playAudio(this, 'solo_audio/cual_es_tu_deseo_soloaudio.mp3'); return false;" class="block text-[#7c86ff] font-semibold mb-4">🔊 Versión audio</a>
             <a href="bio_perla.html" class="text-blue-700 font-bold border-b-2 border-blue-700">Bio Perla Zelmanovich →</a>
         </section>
 
+        <!-- SECCIÓN 2: CONJUNTOS -->
         <section id="conjuntos-title" class="title-section"><h2 class="text-6xl md:text-8xl italic text-[#2C2973]">Conjuntos</h2></section>
-        <section id="conjuntos-hero" class="hero-section"><picture><source media="(max-width: 768px)" srcset="images/conjuntos_resized_celular.jpeg"><img src="images/conjuntos_resized.jpeg" alt="Conjuntos" class="w-full h-[98vh] object-contain"></picture></section>
+        <section id="conjuntos-hero" class="hero-section">
+            <picture>
+                <source media="(max-width: 768px)" srcset="images/conjuntos_resized_celular.jpeg">
+                <img src="images/conjuntos_resized.jpeg" alt="Conjuntos" class="w-full h-auto object-contain">
+            </picture>
+        </section>
         <section id="conjuntos-content" class="page-section max-w-3xl mx-auto">
             <h2 class="text-5xl font-bold text-[#2C2973] mb-6">Conjuntos</h2>
-            <p class="text-lg text-slate-800 mb-8 leading-relaxed">Vivimos en una era de múltiples fragmentaciones en un mundo en el que muy pocos concentran mucha riqueza. ¿Cuáles son las desigualdades más marcadas en estos tiempos y qué horizontes de igualdad se pueden percibir? <br><br> EEn esta charla Inés Dussel y el sociólogo Gabriel Kessler conversan sobre la necesidad de re pensar lo común ante la desigualdad.</p>
-            <div class="video-container mb-8 shadow-lg rounded-sm" onclick="playVideo(this, '8q-tCaMi4Do')"><img src="images/conjuntos_resized.jpeg" class="w-full h-auto object-contain"></div>
-            <a href="bio_gabriel.html" class="text-blue-700 font-bold border-b-2 border-blue-700">Bio Gabriel Kessler →</a>
+            <p class="text-lg text-slate-800 mb-8 leading-relaxed">Vivimos en una era de múltiples fragmentaciones en un mundo en el que muy pocos concentran mucha riqueza. ¿Cuáles son las desigualdades más marcadas en estos tiempos y qué horizontes de igualdad se pueden percibir? <br><br> En esta charla Inés Dussel y el sociólogo Gabriel Kessler conversan sobre la necesidad de re pensar lo común ante la desigualdad.</p>
+            <div class="video-container mb-8 shadow-lg" onclick="playVideo(this, '8q-tCaMi4Do')"><img src="images/conjuntos_resized.jpeg" class="w-full h-auto object-contain"></div>
+            <a href="javascript:void(0)" onclick="playAudio(this, 'solo_audio/en_conjunto_soloaudio.mp3'); return false;" class="block text-[#7c86ff] font-semibold mb-4">🔊 Versión audio</a>
+            <a href="bio_kessler.html" class="text-blue-700 font-bold border-b-2 border-blue-700">Bio Gabriel Kessler →</a>
         </section>
 
+        <!-- SECCIÓN 3: ODIO DIGITAL -->
         <section id="odio-title" class="title-section"><h2 class="text-6xl md:text-8xl italic text-[#2C2973]">Odio digital</h2></section>
-        <section id="odio-hero" class="hero-section"><picture><source media="(max-width: 768px)" srcset="images/odio_digital_resized_celular.jpeg"><img src="images/odio_digital_resized.jpeg" alt="Odio" class="w-full h-[96vh] object-contain"></picture></section>
+        <section id="odio-hero" class="hero-section">
+            <picture>
+                <source media="(max-width: 768px)" srcset="images/odio_digital_resized_celular.jpeg">
+                <img src="images/odio_digital_resized.jpeg" alt="Odio digital" w-full h-auto object-contain">
+            </picture>
+        </section>
         <section id="odio-content" class="page-section max-w-3xl mx-auto">
             <h2 class="text-5xl font-bold text-[#2C2973] mb-6">Odio digital</h2>
             <p class="text-lg text-slate-800 mb-8 leading-relaxed">El discurso público en redes sociales tiene mucho de odio y poco de encuentro. ¿Por qué crecen y se viralizan los discursos de odio en estos tiempos? ¿Qué podemos hacer para reconocernos en la diferencia desde el respeto y la tolerancia? <br><br> En esta charla Inés Dussel y el historiador Emmanuel Kahan conversan sobre los discursos de odio en este y en otros tiempos.</p>
-            <div class="video-container mb-8 shadow-lg rounded-sm" onclick="playVideo(this, 'wg23lEiNEQo')"><img src="images/odio_digital_resized.jpeg" class="w-full h-auto object-cover object-center"></div>
-            <a href="bio_emmanuel.html" class="text-blue-700 font-bold border-b-2 border-blue-700">Bio Emmanuel Kahan →</a>
+            <div class="video-container mb-8 shadow-lg" onclick="playVideo(this, 'wg23lEiNEQo')"><img src="images/odio_digital_resized.jpeg" class="w-full h-auto object-contain"></div>
+            <a href="javascript:void(0)" onclick="playAudio(this, 'solo_audio/discurso_de_odio_soloaudio.mp3'); return false;" class="block text-[#7c86ff] font-semibold mb-4">🔊 Versión audio</a>
+            <a href="bio_kahan.html" class="text-blue-700 font-bold border-b-2 border-blue-700">Bio Emmanuel Kahan →</a>
         </section>
 
+        <!-- SECCIÓN 4: FUTURO -->
         <section id="futuro-title" class="title-section"><h2 class="text-6xl md:text-8xl italic text-[#2C2973]">Futuro</h2></section>
-        <section id="futuro-hero" class="hero-section"><picture><source media="(max-width: 768px)" srcset="images/futuro_resized_celular.jpeg"><img src="images/futuro_resized.jpeg" alt="Futuro" class="w-full h-[98vh] object-contain"></picture></section>
+        <section id="futuro-hero" class="hero-section">
+            <picture>
+                <source media="(max-width: 768px)" srcset="images/futuro_resized_celular.jpeg">
+                <img src="images/futuro_resized.jpeg" alt="Futuro" class="w-full h-auto object-contain">
+            </picture>
+        </section>
         <section id="futuro-content" class="page-section max-w-3xl mx-auto">
             <h2 class="text-5xl font-bold text-[#2C2973] mb-6">Futuro</h2>
             <p class="text-lg text-slate-800 mb-8 leading-relaxed">¿Cómo imaginamos el futuro? Más allá de las versiones distópicas de un mundo arrasado y las tecno utopías, pensar desde el arte puede ayudar a avizorar otros futuros. <br><br> En esta charla, Inés Dussel e Isol conversan acerca de distintas ideas de futuro y la condiciones para imaginar un mundo mejor.</p>
-            <div class="video-container mb-8 shadow-lg rounded-sm" onclick="playVideo(this, 'u8tTEDl6ocA')"><img src="images/futuro_resized.jpeg" class="w-full h-auto object-cover object-center"></div>
+            <div class="video-container mb-8 shadow-lg" onclick="playVideo(this, 'u8tTEDl6ocA')"><img src="images/futuro_resized.jpeg" class="w-full h-auto object-contain"></div>
+            <a href="javascript:void(0)" onclick="playAudio(this, 'solo_audio/el_futuro_soloaudio.mp3'); return false;" class="block text-[#7c86ff] font-semibold mb-4">🔊 Versión audio</a>
             <a href="bio_isol.html" class="text-blue-700 font-bold border-b-2 border-blue-700">Bio Isol →</a>
         </section>
 
+        <!-- SECCIÓN 5: ¿INVASIÓN DIGITAL? -->
         <section id="invasion-title" class="title-section"><h2 class="text-6xl md:text-8xl italic text-[#2C2973]">¿Invasión digital?</h2></section>
-        <section id="invasion-hero" class="hero-section"><picture><source media="(max-width: 768px)" srcset="images/invasion_digital_resized_celular.jpeg"><img src="images/invasion_digital_resized.jpeg" alt="Invasion" class="w-full h-[98vh] object-contain"></picture></section>
+        <section id="invasion-hero" class="hero-section">
+            <picture>
+                <source media="(max-width: 768px)" srcset="images/invasion_digital_resized_celular.jpeg">
+                <img src="images/invasion_digital_resized.jpeg" alt="Invasión digital" class="w-full h-auto object-contain">
+            </picture>
+        </section>
         <section id="invasion-content" class="page-section max-w-3xl mx-auto">
             <h2 class="text-5xl font-bold text-[#2C2973] mb-6">¿Invasión digital?</h2>
             <p class="text-lg text-slate-800 mb-8 leading-relaxed">¿Vivimos demasiado conectados? Internet y las redes sociales han funcionado como infraestructura tecnológica de nuevos tipos de participación ciudadana pero también como arenas de discursos de odio y desinformación. ¿Se puede pensar modelos alternativos? <br><br> En esta charla, Patricia Ferrante e Inés Dussel conversan sobre la ciudadanía conectada.</p>
-            <div class="video-container mb-8 shadow-lg rounded-sm" onclick="playVideo(this, 'LulRJR9faiQ')"><img src="images/invasion_digital_resized.jpeg" class="w-full h-auto object-cover object-center"></div>
-            <a href="bio_ines.html" class="text-blue-700 font-bold border-b-2 border-blue-700">Bio Inés Dussel →</a>
+            <div class="video-container mb-8 shadow-lg" onclick="playVideo(this, 'LulRJR9faiQ')"><img src="images/invasion_digital_resized.jpeg" class="w-full h-auto object-contain"></div>
+            <a href="javascript:void(0)" onclick="playAudio(this, 'solo_audio/invasion_digital_soloaudio.mp3'); return false;" class="block text-[#7c86ff] font-semibold mb-4">🔊 Versión audio</a>
+            <a href="bio_ferrante.html" class="text-blue-700 font-bold border-b-2 border-blue-700">Bio Patricia Ferrante →</a>
         </section>
+    </main>
 
-        <section id="creditos" class="page-section bg-[#2C2973] text-white">
+    <script>
+        function playVideo(element, videoId) {
+            const iframe = document.createElement('iframe');
+            iframe.src = `https://www.youtube.com/embed/${videoId}?autoplay=1`;
+            iframe.className = "w-full h-full";
+            element.innerHTML = '';
+            element.appendChild(iframe);
+        }
+
+        function playAudio(element, audioPath) {
+            if (element.parentElement.querySelector('audio')) return;
+            const audio = document.createElement('audio');
+            audio.controls = true;
+            audio.src = audioPath;
+            audio.className = "w-full mt-4";
+            element.parentElement.appendChild(audio);
+            audio.play();
+        }
+    </script>
+
+        <!-- SECCIONES DE VIÑETAS OMITIDAS POR BREVEDAD, MANTENER ORIGINALES -->
+
+        <section id="creditos" class="bg-[#2C2973] text-white py-20 px-4">
             <div class="max-w-3xl mx-auto text-center">
-                <h2 class="text-5xl font-bold mb-8">Créditos</h2>
-                <p class="text-xl">Proyecto desarrollado como parte de las iniciativas sobre ciudadanía digital.</p>
+                <h2 class="text-5xl font-bold mb-12">Créditos</h2>
+                <div class="space-y-6 text-lg opacity-90">
+                    <p>Dilemas de la ciudadanía contemporánea es un proyecto realizado por el Área de Comunicación y Cultura de FLACSO Argentina, con apoyo de la OEI.</p>
+                    <p>Las viñetas son de Isol.</p>
+                    <p>El desarrollo del proyecto es de Inés Dussel y Patricia Ferrante.</p>
+                    <p>Contacto: <a href="mailto:ciudadanias@flacso.org.ar" class="underline hover:text-blue-300">ciudadanias@flacso.org.ar</a></p>
+                </div>
             </div>
         </section>
     </main>
@@ -145,14 +223,6 @@
         navToggle.addEventListener('click', toggleMenu);
         closeMenu.addEventListener('click', toggleMenu);
         menuLinks.forEach(l => l.addEventListener('click', toggleMenu));
-
-        function playVideo(element, videoId) {
-            const iframe = document.createElement('iframe');
-            iframe.src = `https://www.youtube.com/embed/${videoId}?autoplay=1`;
-            iframe.className = "w-full h-full";
-            element.innerHTML = '';
-            element.appendChild(iframe);
-        }
 
         window.addEventListener('scroll', () => {
             nav.style.transform = (window.scrollY < 50) ? 'translateY(0)' : 'translateY(-100%)';
