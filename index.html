@@ -52,16 +52,40 @@
         </div>
     </nav>
 
-    <!-- Menú Overlay mejorado para móviles -->
-    <div id="menu-overlay" class="fixed inset-0 bg-[#fdfbf7] z-[100] opacity-0 invisible flex flex-col items-center justify-start p-8 overflow-y-auto">
-        <button id="close-menu" class="absolute top-8 right-8 text-4xl text-[#2C2973]">&times;</button>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-12 text-center max-w-5xl w-full">
-            <div><h4 class="text-xl font-bold text-[#2C2973] mb-6 border-b border-[#2C2973] pb-2">Viñetas</h4><ul class="space-y-4 text-slate-700"><li><a href="#deseo-hero" class="menu-link hover:text-blue-700">Deseo cumplido</a></li><li><a href="#conjuntos-hero" class="menu-link hover:text-blue-700">Conjuntos</a></li><li><a href="#odio-hero" class="menu-link hover:text-blue-700">Odio digital</a></li><li><a href="#futuro-hero" class="menu-link hover:text-blue-700">Futuro</a></li><li><a href="#invasion-hero" class="menu-link hover:text-blue-700">¿Invasión digital?</a></li></ul></div>
-            <div><h4 class="text-xl font-bold text-[#2C2973] mb-6 border-b border-[#2C2973] pb-2">Conversaciones</h4><ul class="space-y-4 text-slate-700"><li><a href="#deseo-content" class="menu-link hover:text-blue-700">Perla Zelmanovich</a></li><li><a href="#conjuntos-content" class="menu-link hover:text-blue-700">Gabriel Kessler</a></li><li><a href="#odio-content" class="menu-link hover:text-blue-700">Emmanuel Kahan</a></li><li><a href="#futuro-content" class="menu-link hover:text-blue-700">Isol</a></li><li><a href="#invasion-content" class="menu-link hover:text-blue-700">Inés Dussel</a></li></ul></div>
-            <div><h4 class="text-xl font-bold text-[#2C2973] mb-6 border-b border-[#2C2973] pb-2">Bios</h4><ul class="space-y-4 text-slate-700"><li><a href="bio_perla.html" class="hover:text-blue-700">Perla Zelmanovich</a></li><li><a href="bio_gabriel.html" class="hover:text-blue-700">Gabriel Kessler</a></li><li><a href="bio_emmanuel.html" class="hover:text-blue-700">Emmanuel Kahan</a></li><li><a href="bio_isol.html" class="hover:text-blue-700">Isol</a></li><li><a href="bio_ines.html" class="hover:text-blue-700">Inés Dussel</a></li></ul></div>
+<!-- 1. DIV DEL MENÚ -->
+    <div id="menu-overlay" class="fixed inset-0 z-[100] opacity-0 invisible flex items-center justify-center p-4 bg-[#fdfbf7]/95 transition-all duration-300 ease-in-out">
+        <button id="close-menu" class="absolute top-8 right-8 text-4xl text-[#2C2973] z-[101]">&times;</button>
+        
+        <div class="w-full max-w-5xl max-h-[90vh] overflow-y-auto p-6 md:p-12 bg-white rounded-2xl shadow-2xl">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 text-center">
+                <div><h4 class="text-xl font-bold text-[#2C2973] mb-6 border-b border-[#2C2973] pb-2">Viñetas</h4><ul class="space-y-4 text-slate-700"><li><a href="#deseo-hero" class="menu-link hover:text-blue-700">Deseo cumplido</a></li><li><a href="#conjuntos-hero" class="menu-link hover:text-blue-700">Conjuntos</a></li><li><a href="#odio-hero" class="menu-link hover:text-blue-700">Odio digital</a></li><li><a href="#futuro-hero" class="menu-link hover:text-blue-700">Futuro</a></li><li><a href="#invasion-hero" class="menu-link hover:text-blue-700">¿Invasión digital?</a></li></ul></div>
+                <div><h4 class="text-xl font-bold text-[#2C2973] mb-6 border-b border-[#2C2973] pb-2">Conversaciones</h4><ul class="space-y-4 text-slate-700"><li><a href="#deseo-content" class="menu-link hover:text-blue-700">Perla Zelmanovich</a></li><li><a href="#conjuntos-content" class="menu-link hover:text-blue-700">Gabriel Kessler</a></li><li><a href="#odio-content" class="menu-link hover:text-blue-700">Emmanuel Kahan</a></li><li><a href="#futuro-content" class="menu-link hover:text-blue-700">Isol</a></li><li><a href="#invasion-content" class="menu-link hover:text-blue-700">Inés Dussel</a></li></ul></div>
+                <div><h4 class="text-xl font-bold text-[#2C2973] mb-6 border-b border-[#2C2973] pb-2">Bios</h4><ul class="space-y-4 text-slate-700"><li><a href="bio_perla.html" class="hover:text-blue-700">Perla Zelmanovich</a></li><li><a href="bio_gabriel.html" class="hover:text-blue-700">Gabriel Kessler</a></li><li><a href="bio_emmanuel.html" class="hover:text-blue-700">Emmanuel Kahan</a></li><li><a href="bio_isol.html" class="hover:text-blue-700">Isol</a></li><li><a href="bio_ines.html" class="hover:text-blue-700">Inés Dussel</a></li></ul></div>
+            </div>
         </div>
     </div>
 
+    <!-- 2. SCRIPT DE CONTROL -->
+    <script>
+        const navToggle = document.getElementById('nav-toggle');
+        const closeMenu = document.getElementById('close-menu');
+        const menuOverlay = document.getElementById('menu-overlay');
+        const menuLinks = document.querySelectorAll('.menu-link');
+
+        navToggle.addEventListener('click', () => {
+            menuOverlay.classList.remove('invisible', 'opacity-0');
+            menuOverlay.classList.add('visible', 'opacity-100');
+        });
+
+        const closeFn = () => {
+            menuOverlay.classList.remove('visible', 'opacity-100');
+            menuOverlay.classList.add('invisible', 'opacity-0');
+        };
+
+        closeMenu.addEventListener('click', closeFn);
+        menuLinks.forEach(link => link.addEventListener('click', closeFn));
+    </script>
+    
     <main>
         <!-- PORTADA -->
         <section id="portada" class="h-screen w-full flex flex-col items-center justify-center bg-[#2d2973] p-8">
@@ -114,7 +138,7 @@
             <h2 class="text-5xl font-bold text-[#2C2973] mb-6">Deseo cumplido</h2>
             <p class="text-lg text-slate-800 mb-8 leading-relaxed">La experiencia cotidiana está mediada por algoritmos: hoy cualquier pantalla responde a nuestros deseos y nos propone otros sin pausa. El orden algorítmico nos vende formas de ser, de ver y de mostrarnos. ¿Qué efectos tiene sobre la vida en común? <br><br> En esta charla Inés Dussel y la psicoanalista Perla Zelmanovich conversan sobre las subjetividades en el tiempo contemporáneo.</p>
             <div class="video-container mb-8 shadow-lg" onclick="playVideo(this, 'LnekXTxDyHI')"><img src="images/deseo_cumplido_resized.jpeg" class="w-full h-full object-contain"></div>
-            <a href="javascript:void(0)" onclick="playAudio(this, 'solo_audio/cual_es_tu_deseo_soloaudio.mp3'); return false;" class="block text-[#7c86ff] font-semibold mb-4">🔊 Versión audio</a>
+            <a href="javascript:void(0)" onclick="playAudio(this, 'solo_audio/cual_es_tu_deseo_soloaudio.mp3'); return false;" class="block text-[#7c86ff] font-semibold mb-4">🔊 Versión <b>Solo audio</b></a>
             <a href="bio_perla.html" class="text-blue-700 font-bold border-b-2 border-blue-700">Bio Perla Zelmanovich →</a>
         </section>
 
@@ -130,7 +154,7 @@
             <h2 class="text-5xl font-bold text-[#2C2973] mb-6">Conjuntos</h2>
             <p class="text-lg text-slate-800 mb-8 leading-relaxed">Vivimos en una era de múltiples fragmentaciones en un mundo en el que muy pocos concentran mucha riqueza. ¿Cuáles son las desigualdades más marcadas en estos tiempos y qué horizontes de igualdad se pueden percibir? <br><br> En esta charla Inés Dussel y el sociólogo Gabriel Kessler conversan sobre la necesidad de re pensar lo común ante la desigualdad.</p>
             <div class="video-container mb-8 shadow-lg" onclick="playVideo(this, '8q-tCaMi4Do')"><img src="images/conjuntos_resized.jpeg" class="w-full h-full object-contain"></div>
-            <a href="javascript:void(0)" onclick="playAudio(this, 'solo_audio/en_conjunto_soloaudio.mp3'); return false;" class="block text-[#7c86ff] font-semibold mb-4">🔊 Versión audio</a>
+            <a href="javascript:void(0)" onclick="playAudio(this, 'solo_audio/en_conjunto_soloaudio.mp3'); return false;" class="block text-[#7c86ff] font-semibold mb-4">🔊 Versión <b>Solo audio</b></a>
             <a href="bio_kessler.html" class="text-blue-700 font-bold border-b-2 border-blue-700">Bio Gabriel Kessler →</a>
         </section>
 
@@ -146,7 +170,7 @@
             <h2 class="text-5xl font-bold text-[#2C2973] mb-6">Odio digital</h2>
             <p class="text-lg text-slate-800 mb-8 leading-relaxed">El discurso público en redes sociales tiene mucho de odio y poco de encuentro. ¿Por qué crecen y se viralizan los discursos de odio en estos tiempos? ¿Qué podemos hacer para reconocernos en la diferencia desde el respeto y la tolerancia? <br><br> En esta charla Inés Dussel y el historiador Emmanuel Kahan conversan sobre los discursos de odio en este y en otros tiempos.</p>
             <div class="video-container mb-8 shadow-lg" onclick="playVideo(this, 'wg23lEiNEQo')"><img src="images/odio_digital_resized.jpeg" class="w-full h-full object-contain"></div>
-            <a href="javascript:void(0)" onclick="playAudio(this, 'solo_audio/discurso_de_odio_soloaudio.mp3'); return false;" class="block text-[#7c86ff] font-semibold mb-4">🔊 Versión audio</a>
+            <a href="javascript:void(0)" onclick="playAudio(this, 'solo_audio/discurso_de_odio_soloaudio.mp3'); return false;" class="block text-[#7c86ff] font-semibold mb-4">🔊 Versión <b>Solo audio</b></a>
             <a href="bio_kahan.html" class="text-blue-700 font-bold border-b-2 border-blue-700">Bio Emmanuel Kahan →</a>
         </section>
 
@@ -162,7 +186,7 @@
             <h2 class="text-5xl font-bold text-[#2C2973] mb-6">Futuro</h2>
             <p class="text-lg text-slate-800 mb-8 leading-relaxed">¿Cómo imaginamos el futuro? Más allá de las versiones distópicas de un mundo arrasado y las tecno utopías, pensar desde el arte puede ayudar a avizorar otros futuros. <br><br> En esta charla, Inés Dussel e Isol conversan acerca de distintas ideas de futuro y la condiciones para imaginar un mundo mejor.</p>
             <div class="video-container mb-8 shadow-lg" onclick="playVideo(this, 'u8tTEDl6ocA')"><img src="images/futuro_resized.jpeg" class="w-full h-full object-contain"></div>
-            <a href="javascript:void(0)" onclick="playAudio(this, 'solo_audio/el_futuro_soloaudio.mp3'); return false;" class="block text-[#7c86ff] font-semibold mb-4">🔊 Versión audio</a>
+            <a href="javascript:void(0)" onclick="playAudio(this, 'solo_audio/el_futuro_soloaudio.mp3'); return false;" class="block text-[#7c86ff] font-semibold mb-4">🔊 Versión <b>Solo audio</b></a>
             <a href="bio_isol.html" class="text-blue-700 font-bold border-b-2 border-blue-700">Bio Isol →</a>
         </section>
 
@@ -178,7 +202,7 @@
             <h2 class="text-5xl font-bold text-[#2C2973] mb-6">¿Invasión digital?</h2>
             <p class="text-lg text-slate-800 mb-8 leading-relaxed">¿Vivimos demasiado conectados? Internet y las redes sociales han funcionado como infraestructura tecnológica de nuevos tipos de participación ciudadana pero también como arenas de discursos de odio y desinformación. ¿Se puede pensar modelos alternativos? <br><br> En esta charla, Patricia Ferrante e Inés Dussel conversan sobre la ciudadanía conectada.</p>
             <div class="video-container mb-8 shadow-lg" onclick="playVideo(this, 'LulRJR9faiQ')"><img src="images/invasion_digital_resized.jpeg" class="w-full h-full object-contain"></div>
-            <a href="javascript:void(0)" onclick="playAudio(this, 'solo_audio/invasion_digital_soloaudio.mp3'); return false;" class="block text-[#7c86ff] font-semibold mb-4">🔊 Versión audio</a>
+            <a href="javascript:void(0)" onclick="playAudio(this, 'solo_audio/invasion_digital_soloaudio.mp3'); return false;" class="block text-[#7c86ff] font-semibold mb-4">🔊 Versión <b>Solo audio</b></a>
             <a href="bio_ines.html" class="text-blue-700 font-bold border-b-2 border-blue-700">Bio Inés Dussel →</a>
         </section>
 
