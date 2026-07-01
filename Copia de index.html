@@ -11,62 +11,45 @@
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
     
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>   
     
     <style>
         body { font-family: 'Inter', sans-serif; background-color: #fdfbf7; color: #1a1a1a; }
         h1, h2, h3, h4 { font-family: 'Playfair Display', serif; }
         
         .page-section { min-height: 100vh; display: flex; flex-direction: column; justify-content: center; padding: 4rem 1.5rem; border-bottom: 1px solid #e5e7eb; }
-        
-        /* Ajuste para que la imagen de la viñeta sea fluida */
         .hero-section { min-height: 60vh; max-height: 85vh; display: flex; align-items: center; justify-content: center; padding: 1rem; overflow: hidden; }
-        
         .title-section { height: 100vh; width: 100%; display: flex; align-items: center; justify-content: center; padding: 4rem; background-color: #fdfbf7; }
         
         nav { transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1); }
-        #menu-overlay { transition: opacity 0.3s ease, visibility 0.3s; }
+        
+        /* Menú flotante scrolleable */
+        #menu-overlay { position: fixed; inset: 0; z-index: 100; display: flex; align-items: center; justify-content: center; padding: 20px; background-color: rgba(253, 251, 247, 0.98); transition: all 0.3s ease; opacity: 0; visibility: hidden; }
+        #menu-overlay.active { opacity: 1; visibility: visible; }
+        .menu-inner { width: 100%; max-width: 1024px; max-height: 85vh; overflow-y: auto; background: white; padding: 3rem; border-radius: 1rem; box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1); }
         
         .video-container { position: relative; width: 100%; aspect-ratio: 16 / 9; cursor: pointer; overflow: hidden; background-color: #eee; }
-        .video-container:hover img { transform: scale(1.05); opacity: 0.8; }
-        .video-container img { transition: all 0.3s ease; }
-        
-        .video-container::after {
-            content: '▶'; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
-            font-size: 5rem; color: white; opacity: 0.8; text-shadow: 0 4px 10px rgba(0,0,0,0.5); pointer-events: none;
-        }
+        .video-container::after { content: '▶'; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-size: 5rem; color: white; opacity: 0.8; pointer-events: none; }
     </style>
 </head>
-
-    <main>
-        <section id="portada" class="h-screen w-full flex items-center justify-center bg-[#2d2973] p-8">
-            <div class="text-center flex flex-col gap-1 max-w-4xl">
-                <h1 class="font-['Playfair_Display'] font-[800] tracking-tighter text-white text-[50px] md:text-[90px] leading-[0.9]">
-                    Dilemas de la ciudadanía contemporánea
-                </h1>
-                <p class="font-['Playfair_Display'] font-[300] tracking-tighter italic text-[#7c86ff] text-[28px] md:text-[80px] leading-[0.9]">
-                    Recursos para la formación ciudadana
-                </p>
-            </div>
-        </section>
-
-
-
 <body class="leading-relaxed">
 
+    <!-- Navegación -->
     <nav id="main-nav" class="fixed top-0 w-full z-50 py-4 px-6 bg-white text-[#201E59] shadow-md" role="navigation">
         <div class="max-w-5xl mx-auto flex justify-between items-center">
             <h1 class="text-xl font-bold italic tracking-tight hidden md:block">Dilemas de la ciudadanía</h1>
             <div class="flex items-center gap-6">
-                <a href="#inicio" class="text-sm font-semibold uppercase tracking-wider hover:text-blue-700">Inicio</a>
-                <button id="nav-toggle" aria-expanded="false" class="text-sm font-semibold uppercase tracking-wider hover:text-blue-700 focus:outline-none">Navegación</button>
+                <a href="#portada" class="text-sm font-semibold uppercase tracking-wider hover:text-blue-700">Inicio</a>
+                <button id="nav-toggle" class="text-sm font-semibold uppercase tracking-wider hover:text-blue-700 focus:outline-none">Navegación</button>
                 <a href="#creditos" class="text-sm font-semibold uppercase tracking-wider hover:text-blue-700">Créditos</a>
             </div>
         </div>
     </nav>
 
-    <div id="menu-overlay" class="fixed inset-0 bg-[#fdfbf7] z-[100] opacity-0 invisible flex items-center justify-center p-8">
+    <!-- Menú Overlay -->
+    <div id="menu-overlay">
         <button id="close-menu" class="absolute top-8 right-8 text-4xl text-[#2C2973]">&times;</button>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-12 text-center max-w-5xl w-full">
+        <div class="menu-inner grid grid-cols-1 md:grid-cols-3 gap-12 text-center">
             <div><h4 class="text-xl font-bold text-[#2C2973] mb-6 border-b border-[#2C2973] pb-2">Viñetas</h4><ul class="space-y-4 text-slate-700"><li><a href="#deseo-hero" class="menu-link hover:text-blue-700">Deseo cumplido</a></li><li><a href="#conjuntos-hero" class="menu-link hover:text-blue-700">Conjuntos</a></li><li><a href="#odio-hero" class="menu-link hover:text-blue-700">Odio digital</a></li><li><a href="#futuro-hero" class="menu-link hover:text-blue-700">Futuro</a></li><li><a href="#invasion-hero" class="menu-link hover:text-blue-700">¿Invasión digital?</a></li></ul></div>
             <div><h4 class="text-xl font-bold text-[#2C2973] mb-6 border-b border-[#2C2973] pb-2">Conversaciones</h4><ul class="space-y-4 text-slate-700"><li><a href="#deseo-content" class="menu-link hover:text-blue-700">Perla Zelmanovich</a></li><li><a href="#conjuntos-content" class="menu-link hover:text-blue-700">Gabriel Kessler</a></li><li><a href="#odio-content" class="menu-link hover:text-blue-700">Emmanuel Kahan</a></li><li><a href="#futuro-content" class="menu-link hover:text-blue-700">Isol</a></li><li><a href="#invasion-content" class="menu-link hover:text-blue-700">Inés Dussel</a></li></ul></div>
             <div><h4 class="text-xl font-bold text-[#2C2973] mb-6 border-b border-[#2C2973] pb-2">Bios</h4><ul class="space-y-4 text-slate-700"><li><a href="bio_perla.html" class="hover:text-blue-700">Perla Zelmanovich</a></li><li><a href="bio_gabriel.html" class="hover:text-blue-700">Gabriel Kessler</a></li><li><a href="bio_emmanuel.html" class="hover:text-blue-700">Emmanuel Kahan</a></li><li><a href="bio_isol.html" class="hover:text-blue-700">Isol</a></li><li><a href="bio_ines.html" class="hover:text-blue-700">Inés Dussel</a></li></ul></div>
@@ -74,6 +57,25 @@
     </div>
 
     <main>
+
+        <section id="portada" class="h-screen w-full flex flex-col items-center justify-center bg-[#2d2973] p-8">
+            <div class="text-center flex flex-col gap-1 max-w-4xl flex-grow justify-center">
+                <h1 class="font-['Playfair_Display'] font-[800] tracking-tighter text-white text-[50px] md:text-[90px] leading-[0.9]">Dilemas de la ciudadanía contemporánea</h1>
+                <p class="font-['Playfair_Display'] font-[300] tracking-tighter italic text-[#7c86ff] text-[28px] md:text-[80px] leading-[0.9]">Recursos para la formación ciudadana</p>
+            </div>
+            <div class="w-full max-w-4xl bg-[#FAFAFA] py-6 flex justify-center items-center gap-12 rounded-xl">
+                <img src="images/logo_FLACSO_ar.jpeg" alt="Logo FLACSO" class="h-12 md:h-16 object-contain opacity-80">
+                <img src="images/logo_OEI.jpeg" alt="Logo OEI" class="h-12 md:h-16 object-contain opacity-80">
+            </div>
+        </section>
+
+
+
+    
+
+    
+
+    
 <section id="inicio" class="page-section bg-[#fdfbf7] text-[#2C2973]">
             <div class="max-w-3xl mx-auto text-left">
                 <div class="text-3xl leading-relaxed font-light space-y-6">
@@ -107,8 +109,10 @@
             <h2 class="text-5xl font-bold text-[#2C2973] mb-6">Deseo cumplido</h2>
             <p class="text-lg text-slate-800 mb-8 leading-relaxed">La experiencia cotidiana está mediada por algoritmos: hoy cualquier pantalla responde a nuestros deseos y nos propone otros sin pausa. El orden algorítmico nos vende formas de ser, de ver y de mostrarnos. ¿Qué efectos tiene sobre la vida en común? <br><br> En esta charla Inés Dussel y la psicoanalista Perla Zelmanovich conversan sobre las subjetividades en el tiempo contemporáneo.</p>
             <div class="video-container mb-8 shadow-lg" onclick="playVideo(this, 'LnekXTxDyHI')"><img src="images/deseo_cumplido_resized.jpeg" class="w-full h-auto object-contain"></div>
-            <a href="javascript:void(0)" onclick="playAudio(this, 'solo_audio/cual_es_tu_deseo_soloaudio.mp3'); return false;" class="block text-[#7c86ff] font-semibold mb-4">🔊 Versión audio</a>
-            <a href="bio_perla.html" class="text-blue-700 font-bold border-b-2 border-blue-700">Bio Perla Zelmanovich →</a>
+            <a href="javascript:void(0)" onclick="playAudio(this, 'solo_audio/cual_es_tu_deseo_soloaudio.mp3'); return false;" class="flex items-center gap-2 text-[#7c86ff] font-semibold mb-4">
+                <i data-lucide="headphones" class="w-5 h-5 text-[#7c86ff]"></i> <span>Escuchar solo audio</span>
+            </a>
+                <a href="bio_perla.html" class="text-blue-700 font-bold border-b-2 border-blue-700">Bio Perla Zelmanovich →</a>
         </section>
 
         <!-- SECCIÓN 2: CONJUNTOS -->
@@ -123,7 +127,9 @@
             <h2 class="text-5xl font-bold text-[#2C2973] mb-6">Conjuntos</h2>
             <p class="text-lg text-slate-800 mb-8 leading-relaxed">Vivimos en una era de múltiples fragmentaciones en un mundo en el que muy pocos concentran mucha riqueza. ¿Cuáles son las desigualdades más marcadas en estos tiempos y qué horizontes de igualdad se pueden percibir? <br><br> En esta charla Inés Dussel y el sociólogo Gabriel Kessler conversan sobre la necesidad de re pensar lo común ante la desigualdad.</p>
             <div class="video-container mb-8 shadow-lg" onclick="playVideo(this, '8q-tCaMi4Do')"><img src="images/conjuntos_resized.jpeg" class="w-full h-auto object-contain"></div>
-            <a href="javascript:void(0)" onclick="playAudio(this, 'solo_audio/en_conjunto_soloaudio.mp3'); return false;" class="block text-[#7c86ff] font-semibold mb-4">🔊 Versión audio</a>
+            <a href="javascript:void(0)" onclick="playAudio(this, 'solo_audio/en_conjunto_soloaudio.mp3'); return false;" class="flex items-center gap-2 text-[#7c86ff] font-semibold mb-4">           
+                <i data-lucide="headphones" class="w-5 h-5 text-[#7c86ff]"></i> <span>Escuchar solo audio</span>
+            </a>
             <a href="bio_kessler.html" class="text-blue-700 font-bold border-b-2 border-blue-700">Bio Gabriel Kessler →</a>
         </section>
 
@@ -139,7 +145,9 @@
             <h2 class="text-5xl font-bold text-[#2C2973] mb-6">Odio digital</h2>
             <p class="text-lg text-slate-800 mb-8 leading-relaxed">El discurso público en redes sociales tiene mucho de odio y poco de encuentro. ¿Por qué crecen y se viralizan los discursos de odio en estos tiempos? ¿Qué podemos hacer para reconocernos en la diferencia desde el respeto y la tolerancia? <br><br> En esta charla Inés Dussel y el historiador Emmanuel Kahan conversan sobre los discursos de odio en este y en otros tiempos.</p>
             <div class="video-container mb-8 shadow-lg" onclick="playVideo(this, 'wg23lEiNEQo')"><img src="images/odio_digital_resized.jpeg" class="w-full h-auto object-contain"></div>
-            <a href="javascript:void(0)" onclick="playAudio(this, 'solo_audio/discurso_de_odio_soloaudio.mp3'); return false;" class="block text-[#7c86ff] font-semibold mb-4">🔊 Versión audio</a>
+            <a href="javascript:void(0)" onclick="playAudio(this, 'solo_audio/discurso_de_odio_soloaudio.mp3'); return false;" class="flex items-center gap-2 text-[#7c86ff] font-semibold mb-4">
+                <i data-lucide="headphones" class="w-5 h-5 text-[#7c86ff]"></i> <span>Escuchar solo audio</span>
+            </a>                    
             <a href="bio_kahan.html" class="text-blue-700 font-bold border-b-2 border-blue-700">Bio Emmanuel Kahan →</a>
         </section>
 
@@ -155,7 +163,9 @@
             <h2 class="text-5xl font-bold text-[#2C2973] mb-6">Futuro</h2>
             <p class="text-lg text-slate-800 mb-8 leading-relaxed">¿Cómo imaginamos el futuro? Más allá de las versiones distópicas de un mundo arrasado y las tecno utopías, pensar desde el arte puede ayudar a avizorar otros futuros. <br><br> En esta charla, Inés Dussel e Isol conversan acerca de distintas ideas de futuro y la condiciones para imaginar un mundo mejor.</p>
             <div class="video-container mb-8 shadow-lg" onclick="playVideo(this, 'u8tTEDl6ocA')"><img src="images/futuro_resized.jpeg" class="w-full h-auto object-contain"></div>
-            <a href="javascript:void(0)" onclick="playAudio(this, 'solo_audio/el_futuro_soloaudio.mp3'); return false;" class="block text-[#7c86ff] font-semibold mb-4">🔊 Versión audio</a>
+            <a href="javascript:void(0)" onclick="playAudio(this, 'solo_audio/el_futuro_soloaudio.mp3'); return false;" class="flex items-center gap-2 text-[#7c86ff] font-semibold mb-4">
+                <i data-lucide="headphones" class="w-5 h-5 text-[#7c86ff]"></i> <span>Escuchar solo audio</span>
+            </a>
             <a href="bio_isol.html" class="text-blue-700 font-bold border-b-2 border-blue-700">Bio Isol →</a>
         </section>
 
@@ -171,8 +181,10 @@
             <h2 class="text-5xl font-bold text-[#2C2973] mb-6">¿Invasión digital?</h2>
             <p class="text-lg text-slate-800 mb-8 leading-relaxed">¿Vivimos demasiado conectados? Internet y las redes sociales han funcionado como infraestructura tecnológica de nuevos tipos de participación ciudadana pero también como arenas de discursos de odio y desinformación. ¿Se puede pensar modelos alternativos? <br><br> En esta charla, Patricia Ferrante e Inés Dussel conversan sobre la ciudadanía conectada.</p>
             <div class="video-container mb-8 shadow-lg" onclick="playVideo(this, 'LulRJR9faiQ')"><img src="images/invasion_digital_resized.jpeg" class="w-full h-auto object-contain"></div>
-            <a href="javascript:void(0)" onclick="playAudio(this, 'solo_audio/invasion_digital_soloaudio.mp3'); return false;" class="block text-[#7c86ff] font-semibold mb-4">🔊 Versión audio</a>
-            <a href="bio_ferrante.html" class="text-blue-700 font-bold border-b-2 border-blue-700">Bio Patricia Ferrante →</a>
+            <a href="javascript:void(0)" onclick="playAudio(this, 'solo_audio/invasion_digital_soloaudio.mp3'); return false;" class="flex items-center gap-2 text-[#7c86ff] font-semibold mb-4">      
+                <i data-lucide="headphones" class="w-5 h-5 text-[#7c86ff]"></i> <span>Escuchar solo audio</span>
+            </a>            
+            <a href="bio_ines.html" class="text-blue-700 font-bold border-b-2 border-blue-700">Bio Inés Dussel →</a>
         </section>
     </main>
 
@@ -184,7 +196,34 @@
             element.innerHTML = '';
             element.appendChild(iframe);
         }
+            // Inicializar íconos apenas carga la página
+            document.addEventListener('DOMContentLoaded', () => {
+                lucide.createIcons();
+            });
 
+                // Inicialización básica
+        lucide.createIcons();
+
+        // Lógica Menú
+    <script>
+        const menuOverlay = document.getElementById('menu-overlay');
+        const navToggle = document.getElementById('nav-toggle');
+        const closeMenu = document.getElementById('close-menu');
+    
+        // Función única de toggle
+        const toggleMenu = () => {
+            menuOverlay.classList.toggle('active');
+        };
+
+        navToggle.addEventListener('click', toggleMenu);
+        closeMenu.addEventListener('click', toggleMenu);
+    
+        // Cerrar al hacer clic en un link del menú
+        document.querySelectorAll('.menu-link').forEach(link => {
+            link.addEventListener('click', toggleMenu);
+        });
+    
+        
         function playAudio(element, audioPath) {
             if (element.parentElement.querySelector('audio')) return;
             const audio = document.createElement('audio');
@@ -196,45 +235,67 @@
         }
     </script>
 
-        <!-- SECCIONES DE VIÑETAS OMITIDAS POR BREVEDAD, MANTENER ORIGINALES -->
-
+        <!-- CRÉDITOS -->
         <section id="creditos" class="bg-[#2C2973] text-white py-20 px-4">
             <div class="max-w-3xl mx-auto text-center">
                 <h2 class="text-5xl font-bold mb-12">Créditos</h2>
-                <div class="space-y-6 text-lg opacity-90">
+                <div class="space-y-6 text-lg opacity-90 mb-12">
                     <p>Dilemas de la ciudadanía contemporánea es un proyecto realizado por el Área de Comunicación y Cultura de FLACSO Argentina, con apoyo de la OEI.</p>
                     <p>Las viñetas son de Isol.</p>
                     <p>El desarrollo del proyecto es de Inés Dussel y Patricia Ferrante.</p>
                     <p>Contacto: <a href="mailto:ciudadanias@flacso.org.ar" class="underline hover:text-blue-300">ciudadanias@flacso.org.ar</a></p>
+                </div>
+                <div class="bg-[#FAFAFA] py-8 rounded-xl flex justify-center items-center gap-12">
+                    <img src="images/logo_FLACSO_ar.jpeg" alt="Logo FLACSO" class="h-16 object-contain">
+                    <img src="images/logo_OEI.jpeg" alt="Logo OEI" class="h-16 object-contain">
                 </div>
             </div>
         </section>
     </main>
 
     <script>
-        const menuOverlay = document.getElementById('menu-overlay');
-        const navToggle = document.getElementById('nav-toggle');
-        const closeMenu = document.getElementById('close-menu');
-        const nav = document.getElementById('main-nav');
-        const menuLinks = document.querySelectorAll('.menu-link');
+        document.addEventListener('DOMContentLoaded', () => {
+            lucide.createIcons();
+            const menuOverlay = document.getElementById('menu-overlay');
+            const navToggle = document.getElementById('nav-toggle');
+            const closeMenu = document.getElementById('close-menu');
+            const nav = document.getElementById('main-nav');
 
-        const toggleMenu = () => { menuOverlay.classList.toggle('opacity-0'); menuOverlay.classList.toggle('invisible'); };
-        
-        navToggle.addEventListener('click', toggleMenu);
-        closeMenu.addEventListener('click', toggleMenu);
-        menuLinks.forEach(l => l.addEventListener('click', toggleMenu));
+            const toggleMenu = () => menuOverlay.classList.toggle('active');
+            
+            navToggle.addEventListener('click', toggleMenu);
+            closeMenu.addEventListener('click', toggleMenu);
+            document.querySelectorAll('.menu-link').forEach(l => l.addEventListener('click', toggleMenu));
 
-        window.addEventListener('scroll', () => {
-            nav.style.transform = (window.scrollY < 50) ? 'translateY(0)' : 'translateY(-100%)';
+            let navTimer=null;
+function showNav(){nav.style.transform='translateY(0)';}
+function hideNav(){if(window.scrollY>window.innerHeight*0.8){nav.style.transform='translateY(-110%)';}}
+window.addEventListener('scroll',()=>{
+ if(window.scrollY<window.innerHeight*0.8){showNav();}else{hideNav();}
+});
+document.addEventListener('mousemove',(e)=>{
+ if(window.scrollY>window.innerHeight*0.8){
+   if(e.clientY<60){showNav(); clearTimeout(navTimer);}
+   else{clearTimeout(navTimer); navTimer=setTimeout(hideNav,1200);}
+ }
+});
+document.addEventListener('touchstart',(e)=>{
+ if(window.scrollY>window.innerHeight*0.8 && e.touches[0].clientY<70){
+   showNav();
+   clearTimeout(navTimer);
+   navTimer=setTimeout(hideNav,2000);
+ }
+});
         });
 
-        const showNav = (e) => {
-            const clientY = e.clientY || (e.touches && e.touches[0].clientY);
-            if (clientY < 150) nav.style.transform = 'translateY(0)';
-        };
-
-        window.addEventListener('mousemove', showNav);
-        window.addEventListener('touchstart', showNav);
+        function playAudio(element, audioPath) {
+            if (element.parentElement.querySelector('audio')) return;
+            const audio = new Audio(audioPath);
+            audio.controls = true;
+            audio.className = "w-full mt-4";
+            element.parentElement.appendChild(audio);
+            audio.play();
+        }
     </script>
 </body>
 </html>
