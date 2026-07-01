@@ -1004,6 +1004,200 @@
             }
         }
     
+                /* ==========================================================
+            MARCOS EDITORIALES MINIMALISTAS
+            =========================================================== */
+
+            .title-section,
+            .hero-section {
+                position: relative;
+            }
+
+            /* Títulos a pantalla completa */
+            .minimal-title-frame {
+                position: relative;
+                overflow: hidden;
+                text-align: center;
+            }
+
+            .minimal-title-frame h2 {
+                position: relative;
+                z-index: 2;
+                text-align: center;
+            }
+
+            .minimal-title-frame::before,
+            .minimal-title-frame::after {
+                content: "";
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                width: min(72vw, 760px);
+                height: min(32vh, 260px);
+                transform: translate(-50%, -50%);
+                pointer-events: none;
+                z-index: 1;
+                opacity: .86;
+            }
+
+            .minimal-title-frame::before {
+                background:
+                    linear-gradient(var(--primary), var(--primary)) left top / 120px 1.5px no-repeat,
+                    linear-gradient(var(--primary), var(--primary)) left top / 1.5px 74px no-repeat,
+                    linear-gradient(var(--primary), var(--primary)) right top / 120px 1.5px no-repeat,
+                    linear-gradient(var(--primary), var(--primary)) right top / 1.5px 74px no-repeat,
+                    linear-gradient(var(--primary), var(--primary)) left bottom / 120px 1.5px no-repeat,
+                    linear-gradient(var(--primary), var(--primary)) left bottom / 1.5px 74px no-repeat,
+                    linear-gradient(var(--primary), var(--primary)) right bottom / 120px 1.5px no-repeat,
+                    linear-gradient(var(--primary), var(--primary)) right bottom / 1.5px 74px no-repeat;
+            }
+
+            .minimal-title-frame::after {
+                width: min(54vw, 520px);
+                height: 1px;
+                top: calc(50% + min(18vh, 150px));
+                background: rgba(44, 41, 115, .55);
+                opacity: .55;
+            }
+
+            .minimal-title-frame-2::before {
+                width: min(66vw, 700px);
+                height: min(30vh, 240px);
+            }
+
+            .minimal-title-frame-3::before {
+                width: min(74vw, 780px);
+                height: min(30vh, 245px);
+            }
+
+            .minimal-title-frame-4::before {
+                width: min(58vw, 620px);
+                height: min(28vh, 220px);
+            }
+
+            .minimal-title-frame-5::before {
+                width: min(78vw, 820px);
+                height: min(32vh, 260px);
+            }
+
+            /* Marcos para viñetas grandes */
+            .doodle-frame {
+                position: relative;
+                display: inline-block;
+                padding: 24px;
+            }
+
+            .doodle-frame::before,
+            .doodle-frame::after {
+                content: "";
+                position: absolute;
+                inset: 0;
+                pointer-events: none;
+                z-index: 2;
+            }
+
+            .doodle-frame::before {
+                background:
+                    linear-gradient(var(--primary), var(--primary)) left top / 82px 1.5px no-repeat,
+                    linear-gradient(var(--primary), var(--primary)) left top / 1.5px 82px no-repeat,
+                    linear-gradient(var(--primary), var(--primary)) right top / 82px 1.5px no-repeat,
+                    linear-gradient(var(--primary), var(--primary)) right top / 1.5px 82px no-repeat,
+                    linear-gradient(var(--primary), var(--primary)) left bottom / 82px 1.5px no-repeat,
+                    linear-gradient(var(--primary), var(--primary)) left bottom / 1.5px 82px no-repeat,
+                    linear-gradient(var(--primary), var(--primary)) right bottom / 82px 1.5px no-repeat,
+                    linear-gradient(var(--primary), var(--primary)) right bottom / 1.5px 82px no-repeat;
+                opacity: .75;
+            }
+
+            .doodle-frame::after {
+                inset: 12px;
+                border: 1px solid rgba(44, 41, 115, .10);
+            }
+
+            .doodle-frame picture,
+            .doodle-frame img {
+                position: relative;
+                z-index: 1;
+                display: block;
+            }
+
+            .doodle-frame-2::before {
+                background:
+                    linear-gradient(var(--primary), var(--primary)) left top / 56px 1.5px no-repeat,
+                    linear-gradient(var(--primary), var(--primary)) left top / 1.5px 102px no-repeat,
+                    linear-gradient(var(--primary), var(--primary)) right top / 112px 1.5px no-repeat,
+                    linear-gradient(var(--primary), var(--primary)) right top / 1.5px 56px no-repeat,
+                    linear-gradient(var(--primary), var(--primary)) left bottom / 112px 1.5px no-repeat,
+                    linear-gradient(var(--primary), var(--primary)) left bottom / 1.5px 56px no-repeat,
+                    linear-gradient(var(--primary), var(--primary)) right bottom / 56px 1.5px no-repeat,
+                    linear-gradient(var(--primary), var(--primary)) right bottom / 1.5px 102px no-repeat;
+            }
+
+            .doodle-frame-3::before {
+                opacity: .68;
+            }
+
+            .doodle-frame-4::before {
+                background:
+                    linear-gradient(var(--primary), var(--primary)) left top / 100px 1.5px no-repeat,
+                    linear-gradient(var(--primary), var(--primary)) left top / 1.5px 52px no-repeat,
+                    linear-gradient(var(--primary), var(--primary)) right top / 64px 1.5px no-repeat,
+                    linear-gradient(var(--primary), var(--primary)) right top / 1.5px 92px no-repeat,
+                    linear-gradient(var(--primary), var(--primary)) left bottom / 64px 1.5px no-repeat,
+                    linear-gradient(var(--primary), var(--primary)) left bottom / 1.5px 92px no-repeat,
+                    linear-gradient(var(--primary), var(--primary)) right bottom / 100px 1.5px no-repeat,
+                    linear-gradient(var(--primary), var(--primary)) right bottom / 1.5px 52px no-repeat;
+            }
+
+            .doodle-frame-5::before {
+                opacity: .8;
+            }
+
+            @media (max-width: 768px) {
+                .minimal-title-frame {
+                    padding: 3rem 1.25rem;
+                }
+
+                .minimal-title-frame::before {
+                    width: 86vw;
+                    height: 24vh;
+                    background:
+                        linear-gradient(var(--primary), var(--primary)) left top / 64px 1.25px no-repeat,
+                        linear-gradient(var(--primary), var(--primary)) left top / 1.25px 48px no-repeat,
+                        linear-gradient(var(--primary), var(--primary)) right top / 64px 1.25px no-repeat,
+                        linear-gradient(var(--primary), var(--primary)) right top / 1.25px 48px no-repeat,
+                        linear-gradient(var(--primary), var(--primary)) left bottom / 64px 1.25px no-repeat,
+                        linear-gradient(var(--primary), var(--primary)) left bottom / 1.25px 48px no-repeat,
+                        linear-gradient(var(--primary), var(--primary)) right bottom / 64px 1.25px no-repeat,
+                        linear-gradient(var(--primary), var(--primary)) right bottom / 1.25px 48px no-repeat;
+                }
+
+                .minimal-title-frame::after {
+                    width: 42vw;
+                    top: calc(50% + 17vh);
+                }
+
+                .doodle-frame {
+                    padding: 14px;
+                }
+
+                .doodle-frame::before {
+                    background:
+                        linear-gradient(var(--primary), var(--primary)) left top / 44px 1.25px no-repeat,
+                        linear-gradient(var(--primary), var(--primary)) left top / 1.25px 44px no-repeat,
+                        linear-gradient(var(--primary), var(--primary)) right top / 44px 1.25px no-repeat,
+                        linear-gradient(var(--primary), var(--primary)) right top / 1.25px 44px no-repeat,
+                        linear-gradient(var(--primary), var(--primary)) left bottom / 44px 1.25px no-repeat,
+                        linear-gradient(var(--primary), var(--primary)) left bottom / 1.25px 44px no-repeat,
+                        linear-gradient(var(--primary), var(--primary)) right bottom / 44px 1.25px no-repeat,
+                        linear-gradient(var(--primary), var(--primary)) right bottom / 1.25px 44px no-repeat;
+                }
+
+                .doodle-frame::after {
+                    inset: 7px;
+                }
+            }            
+    
     </style>
 
 </head>
@@ -1128,9 +1322,9 @@
 
                     <li><a href="bio_perla.html">Perla Zelmanovich</a></li>
 
-                    <li><a href="bio_kessler.html">Gabriel Kessler</a></li>
+                    <li><a href="bio_gabriel.html">Gabriel Kessler</a></li>
 
-                    <li><a href="bio_kahan.html">Emmanuel Kahan</a></li>
+                    <li><a href="bio_emmanuel.html">Emmanuel Kahan</a></li>
 
                     <li><a href="bio_isol.html">Isol</a></li>
 
@@ -1248,7 +1442,7 @@
          DILEMA 1 · DESEO CUMPLIDO
     =========================================================== -->
 
-    <section id="deseo-title" class="title-section">
+    <section id="deseo-title" class="title-section minimal-title-frame minimal-title-frame-1">
 
         <h2 class="text-6xl md:text-8xl italic text-[#2C2973]">
             Deseo cumplido
@@ -1257,6 +1451,8 @@
     </section>
 
     <section id="deseo-hero" class="hero-section">
+
+    <div class="doodle-frame doodle-frame-1">
 
         <picture>
 
@@ -1270,6 +1466,7 @@
                 class="w-full h-auto object-contain">
 
         </picture>
+    </div>
 
     </section>
 
@@ -1353,17 +1550,17 @@
          DILEMA 2 · CONJUNTOS
     =========================================================== -->
 
-    <section id="conjuntos-title" class="title-section">
+    <section id="conjuntos-title" class="title-section minimal-title-frame minimal-title-frame-2">
 
         <h2 class="text-6xl md:text-8xl italic text-[#2C2973]">
-
             Conjuntos
-
         </h2>
 
     </section>
 
     <section id="conjuntos-hero" class="hero-section">
+
+    <div class="doodle-frame doodle-frame-2">
 
         <picture>
 
@@ -1377,6 +1574,8 @@
                 class="w-full h-auto object-contain">
 
         </picture>
+    </div>
+
 
     </section>
 
@@ -1459,17 +1658,17 @@
          DILEMA 3 · ODIO DIGITAL
     =========================================================== -->
 
-    <section id="odio-title" class="title-section">
+    <section id="odio-title" class="title-section minimal-title-frame minimal-title-frame-3">
 
         <h2 class="text-6xl md:text-8xl italic text-[#2C2973]">
-
             Odio digital
-
         </h2>
 
     </section>
 
     <section id="odio-hero" class="hero-section">
+
+    <div class="doodle-frame doodle-frame-3">
 
         <picture>
 
@@ -1483,6 +1682,8 @@
                 class="w-full h-auto object-contain">
 
         </picture>
+    </div>
+
 
     </section>
 
@@ -1566,7 +1767,7 @@
          DILEMA 4 · FUTURO
     =========================================================== -->
 
-    <section id="futuro-title" class="title-section">
+    <section id="futuro-title" class="title-section minimal-title-frame minimal-title-frame-4">
 
         <h2 class="text-6xl md:text-8xl italic text-[#2C2973]">
             Futuro
@@ -1576,6 +1777,7 @@
 
     <section id="futuro-hero" class="hero-section">
 
+    <div class="doodle-frame doodle-frame-4">
         <picture>
 
             <source
@@ -1588,6 +1790,7 @@
                 class="w-full h-auto object-contain">
 
         </picture>
+    </div>  
 
     </section>
 
@@ -1668,7 +1871,7 @@
          DILEMA 5 · ¿INVASIÓN DIGITAL?
     =========================================================== -->
 
-    <section id="invasion-title" class="title-section">
+    <section id="invasion-title" class="title-section minimal-title-frame minimal-title-frame-5">
 
         <h2 class="text-6xl md:text-8xl italic text-[#2C2973]">
             ¿Invasión digital?
@@ -1677,6 +1880,8 @@
     </section>
 
     <section id="invasion-hero" class="hero-section">
+
+    <div class="doodle-frame doodle-frame-1">
 
         <picture>
 
@@ -1690,6 +1895,8 @@
                 class="w-full h-auto object-contain">
 
         </picture>
+
+    </div>
 
     </section>
 
