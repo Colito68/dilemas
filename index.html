@@ -181,7 +181,7 @@
         }
 
         .hero-section{
-            padding: 3.25rem 1.5rem; /* Añadido espacio extra (antes 1.5rem) para separar los títulos de las viñetas */
+            padding: 3.25rem 1.5rem;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -588,111 +588,140 @@
         }
     
         /* ==========================================================
-            MARCOS EDITORIALES MINIMALISTAS
-            =========================================================== */
-            .title-section,
-            .hero-section {
-                position: relative;
-            }
+            MARCOS EDITORIALES MINIMALISTAS (ÁNGULOS ABIERTOS)
+           =========================================================== */
+        .title-section,
+        .hero-section {
+            position: relative;
+        }
 
-            .minimal-title-frame {
-                position: relative;
-                overflow: hidden;
-                text-align: center;
-            }
+        .minimal-title-frame {
+            position: relative;
+            overflow: hidden;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 3.25rem 1rem;
+        }
 
-            .minimal-title-frame h2 {
-                position: relative;
-                z-index: 2;
-                text-align: center;
-            }
+        .minimal-title-frame h2 {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            padding: 1.5rem 2.5rem;
+            max-width: min(90vw, 750px);
+            width: 100%;
+        }
 
-            .minimal-title-frame::before,
-            .minimal-title-frame::after {
-                content: "";
-                position: absolute;
-                left: 50%;
-                top: 50%;
-                width: min(85vw, 800px); 
-                height: min(26vh, 210px);
-                transform: translate(-50%, -50%);
-                pointer-events: none;
-                z-index: 1;
-                opacity: .86;
-            }
+        /* Dibuja las 4 esquinas abiertas de manera flexible */
+        .minimal-title-frame::before {
+            content: "";
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            width: min(92vw, 760px);
+            height: 150px;
+            transform: translate(-50%, -50%);
+            pointer-events: none;
+            z-index: 1;
+            opacity: .86;
+            background:
+                linear-gradient(var(--primary), var(--primary)) left top / 70px 1.5px no-repeat,
+                linear-gradient(var(--primary), var(--primary)) left top / 1.5px 45px no-repeat,
+                linear-gradient(var(--primary), var(--primary)) right top / 70px 1.5px no-repeat,
+                linear-gradient(var(--primary), var(--primary)) right top / 1.5px 45px no-repeat,
+                linear-gradient(var(--primary), var(--primary)) left bottom / 70px 1.5px no-repeat,
+                linear-gradient(var(--primary), var(--primary)) left bottom / 1.5px 45px no-repeat,
+                linear-gradient(var(--primary), var(--primary)) right bottom / 70px 1.5px no-repeat,
+                linear-gradient(var(--primary), var(--primary)) right bottom / 1.5px 45px no-repeat;
+        }
 
+        /* Línea horizontal inferior decorativa */
+        .minimal-title-frame::after {
+            content: "";
+            position: absolute;
+            left: 50%;
+            bottom: 15%;
+            width: min(54vw, 320px);
+            height: 1px;
+            transform: translateX(-50%);
+            background: rgba(44, 41, 115, .55);
+            pointer-events: none;
+            z-index: 1;
+        }
 
+        @media (max-width: 768px) {
             .minimal-title-frame::before {
+                width: 90vw;
+                height: 130px;
                 background:
-                    linear-gradient(var(--primary), var(--primary)) left top / 120px 1.5px no-repeat,
-                    linear-gradient(var(--primary), var(--primary)) left top / 1.5px 60px no-repeat,
-                    linear-gradient(var(--primary), var(--primary)) right top / 120px 1.5px no-repeat,
-                    linear-gradient(var(--primary), var(--primary)) right top / 1.5px 60px no-repeat,
-                    linear-gradient(var(--primary), var(--primary)) left bottom / 120px 1.5px no-repeat,
-                    linear-gradient(var(--primary), var(--primary)) left bottom / 1.5px 60px no-repeat,
-                    linear-gradient(var(--primary), var(--primary)) right bottom / 120px 1.5px no-repeat,
-                    linear-gradient(var(--primary), var(--primary)) right bottom / 1.5px 60px no-repeat;
+                    linear-gradient(var(--primary), var(--primary)) left top / 45px 1.25px no-repeat,
+                    linear-gradient(var(--primary), var(--primary)) left top / 1.25px 35px no-repeat,
+                    linear-gradient(var(--primary), var(--primary)) right top / 45px 1.25px no-repeat,
+                    linear-gradient(var(--primary), var(--primary)) right top / 1.25px 35px no-repeat,
+                    linear-gradient(var(--primary), var(--primary)) left bottom / 45px 1.25px no-repeat,
+                    linear-gradient(var(--primary), var(--primary)) left bottom / 1.25px 35px no-repeat,
+                    linear-gradient(var(--primary), var(--primary)) right bottom / 45px 1.25px no-repeat,
+                    linear-gradient(var(--primary), var(--primary)) right bottom / 1.25px 35px no-repeat;
             }
+        }
 
-            .minimal-title-frame::after {
-                width: min(54vw, 520px);
-                height: 1px;
-                top: calc(50% + min(14vh, 120px));
-                background: rgba(44, 41, 115, .55);
-                opacity: .55;
+        .doodle-frame {
+            position: relative;
+            display: inline-block;
+            padding: 18px;
+        }
+
+        .doodle-frame::before,
+        .doodle-frame::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            pointer-events: none;
+            z-index: 2;
+        }
+
+        .doodle-frame::before {
+            background:
+                linear-gradient(var(--primary), var(--primary)) left top / 70px 1.5px no-repeat,
+                linear-gradient(var(--primary), var(--primary)) left top / 1.5px 70px no-repeat,
+                linear-gradient(var(--primary), var(--primary)) right top / 70px 1.5px no-repeat,
+                linear-gradient(var(--primary), var(--primary)) right top / 1.5px 70px no-repeat,
+                linear-gradient(var(--primary), var(--primary)) left bottom / 70px 1.5px no-repeat,
+                linear-gradient(var(--primary), var(--primary)) left bottom / 1.5px 70px no-repeat,
+                linear-gradient(var(--primary), var(--primary)) right bottom / 70px 1.5px no-repeat,
+                linear-gradient(var(--primary), var(--primary)) right bottom / 1.5px 70px no-repeat;
+            opacity: .75;
+        }
+
+        .doodle-frame::after {
+            inset: 9px;
+            border: 1px solid rgba(44, 41, 115, .10);
+        }
+
+        .doodle-frame picture,
+        .doodle-frame img {
+            position: relative;
+            z-index: 1;
+            display: block;
+        }
+
+        @media (max-width: 768px) {
+            .minimal-title-frame {
+                padding: 2rem 1rem;
             }
-
+            .minimal-title-frame h2 {
+                max-width: 92vw;
+                padding: 1.25rem 1rem;
+            }
             .doodle-frame {
-                position: relative;
-                display: inline-block;
-                padding: 18px;
+                padding: 11px;
             }
-
-            .doodle-frame::before,
             .doodle-frame::after {
-                content: "";
-                position: absolute;
-                inset: 0;
-                pointer-events: none;
-                z-index: 2;
+                inset: 5px;
             }
-
-            .doodle-frame::before {
-                background:
-                    linear-gradient(var(--primary), var(--primary)) left top / 70px 1.5px no-repeat,
-                    linear-gradient(var(--primary), var(--primary)) left top / 1.5px 70px no-repeat,
-                    linear-gradient(var(--primary), var(--primary)) right top / 70px 1.5px no-repeat,
-                    linear-gradient(var(--primary), var(--primary)) right top / 1.5px 70px no-repeat,
-                    linear-gradient(var(--primary), var(--primary)) left bottom / 70px 1.5px no-repeat,
-                    linear-gradient(var(--primary), var(--primary)) left bottom / 1.5px 70px no-repeat,
-                    linear-gradient(var(--primary), var(--primary)) right bottom / 70px 1.5px no-repeat,
-                    linear-gradient(var(--primary), var(--primary)) right bottom / 1.5px 70px no-repeat;
-                opacity: .75;
-            }
-
-            .doodle-frame::after {
-                inset: 9px;
-                border: 1px solid rgba(44, 41, 115, .10);
-            }
-
-            .doodle-frame picture,
-            .doodle-frame img {
-                position: relative;
-                z-index: 1;
-                display: block;
-            }
-
-            @media (max-width: 768px) {
-                .minimal-title-frame {
-                    padding: 2.25rem 1.25rem;
-                }
-                .doodle-frame {
-                    padding: 11px;
-                }
-                .doodle-frame::after {
-                    inset: 5px;
-                }
-            }            
+        }
     </style>
 </head>
 
@@ -807,15 +836,15 @@
             <div class="card-title">Conjuntos</div>
         </a>
         <a class="card" href="#odio-hero">
-            <img src="images/odio_digital_resized.jpeg" alt="">
+            <img src="images/odio_digital_resized.jpg" alt="">
             <div class="card-title">Odio digital</div>
         </a>
         <a class="card" href="#futuro-hero">
-            <img src="images/futuro_resized.jpeg" alt="">
+            <img src="images/futuro_resized.jpg" alt="">
             <div class="card-title">Futuro</div>
         </a>
         <a class="card" href="#invasion-hero">
-            <img src="images/invasion_digital_resized.jpeg" alt="">
+            <img src="images/invasion_digital_resized.jpg" alt="">
             <div class="card-title">¿Invasión digital?</div>
         </a>
     </div>
@@ -825,10 +854,10 @@
          DILEMA 1 · DESEO CUMPLIDO
     =========================================================== -->
     <section id="deseo-title" class="title-section minimal-title-frame minimal-title-frame-1" style="margin-top: 80px;">
-    <h2 class="text-6xl md:text-8xl italic text-[#2C2973]">
-        Deseo cumplido
-    </h2>
-</section>
+        <h2 class="text-6xl md:text-8xl italic text-[#2C2973]">
+            Deseo cumplido
+        </h2>
+    </section>
 
     <section id="deseo-hero" class="hero-section">
         <div class="doodle-frame doodle-frame-1 mt-20">
@@ -866,11 +895,10 @@
          DILEMA 2 · CONJUNTOS
     =========================================================== -->
     <section id="conjuntos-title" class="title-section minimal-title-frame minimal-title-frame-2" style="margin-top: 80px;">
-    <h2 class="text-6xl md:text-8xl italic text-[#2C2973]">
-        Conjuntos
-    </h2>
-</section>
-
+        <h2 class="text-6xl md:text-8xl italic text-[#2C2973]">
+            Conjuntos
+        </h2>
+    </section>
 
     <section id="conjuntos-hero" class="hero-section">
         <div class="doodle-frame doodle-frame-2 mt-20">
@@ -908,11 +936,10 @@
          DILEMA 3 · ODIO DIGITAL
     =========================================================== -->
     <section id="odio-title" class="title-section minimal-title-frame minimal-title-frame-3" style="margin-top: 80px;">
-    <h2 class="text-6xl md:text-8xl italic text-[#2C2973]">
-        Odio digital
-    </h2>
-</section>
-
+        <h2 class="text-6xl md:text-8xl italic text-[#2C2973]">
+            Odio digital
+        </h2>
+    </section>
 
     <section id="odio-hero" class="hero-section">
         <div class="doodle-frame doodle-frame-3 mt-20">
@@ -950,10 +977,10 @@
          DILEMA 4 · FUTURO
     =========================================================== -->
     <section id="futuro-title" class="title-section minimal-title-frame minimal-title-frame-4" style="margin-top: 80px;">
-    <h2 class="text-6xl md:text-8xl italic text-[#2C2973]">
-        Futuro
-    </h2>
-</section>
+        <h2 class="text-6xl md:text-8xl italic text-[#2C2973]">
+            Futuro
+        </h2>
+    </section>
 
     <section id="futuro-hero" class="hero-section">
         <div class="doodle-frame doodle-frame-4 mt-20">
@@ -991,11 +1018,10 @@
          DILEMA 5 · ¿INVASIÓN DIGITAL?
     =========================================================== -->
     <section id="invasion-title" class="title-section minimal-title-frame minimal-title-frame-5" style="margin-top: 80px;">
-    <h2 class="text-6xl md:text-8xl italic text-[#2C2973]">
-        ¿Invasión digital?
-    </h2>
-</section>
-
+        <h2 class="text-6xl md:text-8xl italic text-[#2C2973]">
+            ¿Invasión digital?
+        </h2>
+    </section>
 
     <section id="invasion-hero" class="hero-section">
         <div class="doodle-frame doodle-frame-5 mt-20">
@@ -1007,7 +1033,7 @@
     </section>
 
     <section id="invasion-content" class="page-section" style="padding-bottom: 10rem;">
-    <div class="max-w-3xl mx-auto w-full">
+        <div class="max-w-3xl mx-auto w-full">
             <h2 class="text-4xl font-bold text-[#2C2973] mb-6">¿Invasión digital?</h2>
             <div class="text-lg leading-relaxed text-slate-800 mb-8 space-y-4">
                 <p>Internet y las redes sociales han ampliado enormemente las posibilidades de participación ciudadana.</p>
@@ -1025,15 +1051,9 @@
                 <span>Escuchar solo audio</span>
             </button>
             <div class="audio-container"></div>
-        <a
-            href="bio_ines.html"
-            class="inline-block font-bold text-blue-700 border-b-2 border-blue-700">
-
-            Bio Inés Dussel →
-
-        </a>
-    </div>
-</section>
+            <a href="bio_ines.html" class="inline-block font-bold text-blue-700 border-b-2 border-blue-700">Bio Inés Dussel →</a>
+        </div>
+    </section>
 
 <!-- ==========================================================
      SUGERENCIAS DE USO
