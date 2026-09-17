@@ -335,21 +335,39 @@
             }
         }
         .card{
-            display:block;
+            display:flex;
+            flex-direction:column;
             overflow:hidden;
             background:#fff;
             border-radius:12px;
             box-shadow:0 8px 24px rgba(0,0,0,.08);
             transition:.25s;
+            height: 280px; /* Define una altura fija para la tarjeta */
         }
         .card:hover{
             transform:translateY(-6px);
         }
+
+        /* 1. Forzar el marco de la imagen a ocupar el espacio libre */
+        .card img {
+            width: 100%;
+            height: 220px; /* Altura del área visible del dibujo */
+            max-width: none; /* Invalida el max-width: 100% global */
+            object-fit: cover; /* Asegura que llene todo el marco */
+            transform: scale(1.6); /* SUBE O BAJA ESTE NÚMERO PARA AJUSTAR EL ZOOM */
+            transform-origin: center center;
+            display: block;
+        }
+
         .card-title{
             padding:1rem;
             text-align:center;
             font-weight:700;
             color:var(--primary);
+            background:#fff;
+            margin-top: auto; /* Empuja el título siempre al final de la tarjeta */
+            position: relative;
+            z-index: 2;
         }
 
         /* --------------------------------------------------
@@ -870,7 +888,7 @@
         <div class="doodle-frame doodle-frame-1 mt-20 clickable-vignette" data-img="images/deseo_cumplido_resized.jpeg">
             <picture>
                 <source media="(max-width:768px)" srcset="images/deseo_cumplido_resized_celular.jpeg">
-                <img src="images/deseo_cumplido_resized.jpeg" alt="Ilustración Deseo cumplido" class="w-full h-auto object-contain" style="max-width: 750px; margin: 0 auto;">
+                <img src="images/deseo_cumplido_resized.jpeg" alt="Ilustración Deseo cumplido" class="w-full h-auto object-contain" style="max-width: 900px; margin: 0 auto;">
             </picture>
         </div>
     </section>
@@ -911,7 +929,7 @@
         <div class="doodle-frame doodle-frame-2 mt-20 clickable-vignette" data-img="images/conjuntos_resized.jpeg">
             <picture>
                 <source media="(max-width:768px)" srcset="images/conjuntos_resized_celular.jpeg">
-                <img src="images/conjuntos_resized.jpeg" alt="Ilustración Conjuntos" class="w-full h-auto object-contain" style="max-width: 750px; margin: 0 auto;">
+                <img src="images/conjuntos_resized.jpeg" alt="Ilustración Conjuntos" class="w-full h-auto object-contain" style="max-width: 900px; margin: 0 auto;">
             </picture>
         </div>
     </section>
@@ -952,7 +970,7 @@
         <div class="doodle-frame doodle-frame-3 mt-20 clickable-vignette" data-img="images/odio_digital_resized.jpeg">
             <picture>
                 <source media="(max-width:768px)" srcset="images/odio_digital_resized_celular.jpeg">
-                <img src="images/odio_digital_resized.jpeg" alt="Ilustración Odio digital" class="w-full h-auto object-contain" style="max-width: 600px; margin: 0 auto;">
+                <img src="images/odio_digital_resized.jpeg" alt="Ilustración Odio digital" class="w-full h-auto object-contain" style="max-width: 800px; margin: 0 auto;">
             </picture>
         </div>
     </section>
@@ -993,7 +1011,7 @@
         <div class="doodle-frame doodle-frame-4 mt-20 clickable-vignette" data-img="images/futuro_resized.jpeg">
             <picture>
                 <source media="(max-width:768px)" srcset="images/futuro_resized_celular.jpeg">
-                <img src="images/futuro_resized.jpeg" alt="Ilustración Futuro" class="w-full h-auto object-contain" style="max-width: 600px; margin: 0 auto;">
+                <img src="images/futuro_resized.jpeg" alt="Ilustración Futuro" class="w-full h-auto object-contain" style="max-width: 700px; margin: 0 auto;">
             </picture>
         </div>  
     </section>
